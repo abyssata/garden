@@ -14,33 +14,33 @@ configuration:
     - templates
     - .obsidian
   theme:
-    fontOrigin: googleFonts
+    fontOrigin: local
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: Times New Roman
+      body: Times New Roman
+      code: Menlo
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#FFFFFF"
+        lightgray: "#E4E4E4"
+        gray: "#8A8A8A"
+        darkgray: "#111111"
+        dark: "#111111"
+        secondary: "#111111"
+        tertiary: "#555555"
+        highlight: rgba(0, 0, 0, 0.035)
+        textHighlight: "#EBEBEB"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#FFFFFF"
+        lightgray: "#E4E4E4"
+        gray: "#8A8A8A"
+        darkgray: "#111111"
+        dark: "#111111"
+        secondary: "#111111"
+        tertiary: "#555555"
+        highlight: rgba(0, 0, 0, 0.035)
+        textHighlight: "#EBEBEB"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -79,7 +79,7 @@ plugins:
     enabled: true
     order: 40
   - source: "@quartz-community/table-of-contents"
-    enabled: true
+    enabled: false
     order: 50
     layout:
       position: right
@@ -159,27 +159,24 @@ plugins:
   - source: "@quartz-community/tag-page"
     enabled: true
   - source: "@quartz-community/explorer"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 50
   - source: "@quartz-community/graph"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 10
   - source: "@quartz-community/search"
     enabled: true
     layout:
-      position: left
-      priority: 20
-      group: toolbar
-      groupOptions:
-        grow: true
+      position: beforeBody
+      priority: 2
   - source: "@quartz-community/backlinks"
     enabled: true
     layout:
-      position: right
+      position: afterBody
       priority: 50
   - source: "@quartz-community/article-title"
     enabled: true
@@ -199,22 +196,22 @@ plugins:
   - source: "@quartz-community/page-title"
     enabled: true
     layout:
-      position: left
-      priority: 10
+      position: beforeBody
+      priority: 1
   - source: "@quartz-community/darkmode"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 30
       group: toolbar
   - source: "@quartz-community/reader-mode"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 35
       group: toolbar
   - source: "@quartz-community/breadcrumbs"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 5
@@ -230,9 +227,7 @@ plugins:
   - source: "@quartz-community/footer"
     enabled: true
     options:
-      links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+      links: {}
     layout:
       position: footer
       priority: 50

@@ -1,3 +1,236 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// ── The Garden: simple, greyscale, Times ──────────────────────────
+// Modelled on a quiet single-column journal: white page, near-black
+// Times, small uppercase headings, links without underlines.
+
+$serif: "Times New Roman", Times, serif;
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: #ffffff;
+  font-family: $serif;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// One narrow column, centred
+#quartz-body {
+  display: block !important;
+}
+
+#quartz-body .sidebar {
+  display: none !important;
+}
+
+#quartz-body .center,
+footer {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 660px !important;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#quartz-body .center {
+  padding: 3rem 1.25rem 2rem !important;
+}
+
+// Header: title, then search
+.page-header {
+  margin-top: 0 !important;
+}
+
+.page-title {
+  display: block !important;
+  margin: 0 0 0.25rem 0 !important;
+  font-family: $serif;
+  font-size: 1.1rem !important;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.2;
+
+  a {
+    color: #111111 !important;
+  }
+}
+
+.search {
+  max-width: none !important;
+  margin: 0.5rem 0 2.25rem 0;
+
+  .search-button {
+    background: none !important;
+    border: none !important;
+    border-bottom: 1px solid #e4e4e4 !important;
+    border-radius: 0 !important;
+    padding: 0 0 2px 0 !important;
+    height: auto !important;
+    width: auto !important;
+    font-family: $serif;
+
+    p {
+      margin: 0 !important;
+      line-height: 1.2;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #111111;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+}
+
+// Page titles and headings: small, uppercase
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.article-title {
+  font-family: $serif !important;
+  font-size: 1.1rem !important;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.article-title {
+  margin: 0 0 0.25rem 0 !important;
+}
+
+// Hide the Obsidian "Properties" box
+.note-properties,
+.metadata-container {
+  display: none !important;
+}
+
+.content-meta {
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+  color: #8a8a8a !important;
+  margin-top: 0 !important;
+}
+
+// Links: no underline, a faint rule on hover
+a,
+a.internal,
+a.external {
+  color: #111111 !important;
+  background-color: transparent !important;
+  font-weight: normal;
+  text-decoration: none;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 0 0 1px 0 !important;
+  border-radius: 0 !important;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-bottom-color: #111111;
+  }
+}
+
+.page-title a,
+a[role="anchor"],
+.search-button {
+  border-bottom: none !important;
+}
+
+.tag-link::before {
+  content: "#";
+  color: #8a8a8a;
+}
+
+// Quotations: a thin rule, italic
+blockquote {
+  border-left: 1px solid #e4e4e4 !important;
+  background: none !important;
+  margin-left: 0 !important;
+  padding: 2px 0 2px 1rem !important;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e4e4e4;
+  background: none;
+  height: 0;
+}
+
+// Code
+pre,
+code {
+  font-size: 0.875em;
+  background: #f2f2f2 !important;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+}
+
+code {
+  padding: 0.1em 0.35em;
+}
+
+pre code {
+  border: none;
+  padding: 0;
+}
+
+article img {
+  border-radius: 4px;
+}
+
+// Backlinks at the foot of the page
+.backlinks {
+  margin-top: 2.5rem;
+
+  h3 {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em;
+    color: #8a8a8a;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+
+// Folder and tag listings
+.page-listing,
+ul.section-ul {
+  .section {
+    border-bottom: 1px solid #e4e4e4;
+  }
+}
+
+footer {
+  border-top: 1px solid #e4e4e4;
+  margin-top: 1rem !important;
+  padding: 1.25rem 1.25rem 2rem !important;
+  font-size: 0.8125rem;
+  opacity: 0.6;
+  text-align: left;
+}
+
+// Keep the header out of hover and search previews
+.popover,
+.preview-container {
+  .page-title,
+  .search {
+    display: none !important;
+  }
+}
