@@ -124,7 +124,7 @@ h6,
 a,
 a.internal,
 a.external {
-  color: #111111 !important;
+  color: #444444 !important;
   background-color: transparent !important;
   font-weight: normal;
   text-decoration: none;
@@ -134,7 +134,7 @@ a.external {
   transition: border-color 0.15s ease;
 
   &:hover {
-    border-bottom-color: #111111;
+    border-bottom-color: #444444;
   }
 }
 
@@ -318,7 +318,7 @@ footer {
   margin: 0;
 
   a {
-    color: #555555 !important;
+    color: #444444 !important;
     font-size: 0.8rem;
     letter-spacing: 0.04em;
 
@@ -484,4 +484,27 @@ article iframe {
 #quartz-body .center article {
   font-size: 1rem;
   line-height: 1.75;
+}
+
+// Page titles and headings everywhere: same soft grey as the site name
+.article-title,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+.popover h1,
+.search .results-container .result-card > h3 {
+  color: #444444 !important;
+}
+
+// Body text a shade softer than black
+:root {
+  --darkgray: #2a2a2a !important;
+}
+
+body,
+article {
+  color: #2a2a2a;
 }
