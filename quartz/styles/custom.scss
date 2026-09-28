@@ -501,10 +501,87 @@ article h6,
 
 // Body text a shade softer than black
 :root {
-  --darkgray: #2a2a2a !important;
+  --darkgray: #4a4a4a !important;
 }
 
 body,
 article {
-  color: #2a2a2a;
+  color: #4a4a4a;
+}
+
+// ── Reading text in Gelasio; labels (links, headings, side panel) stay in Times ──
+@font-face {
+  font-family: "Gelasio";
+  src: url("static/fonts/gelasio-latin-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gelasio";
+  src: url("static/fonts/gelasio-latin-700-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gelasio";
+  src: url("static/fonts/gelasio-latin-700-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+article p,
+article li,
+article blockquote,
+article td,
+.popover article p,
+.preview-container p {
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 0.95rem;
+}
+
+body article p a.internal:not([role="anchor"]):not(.tag-link),
+body article p a.external,
+body article li a.internal:not([role="anchor"]):not(.tag-link),
+body article li a.external,
+body article blockquote a.internal:not([role="anchor"]):not(.tag-link),
+body article blockquote a.external,
+body article td a.internal:not([role="anchor"]):not(.tag-link),
+body article td a.external {
+  font-family: $serif !important;
+  font-size: 0.95em !important;
+}
+
+// ── Headings: small, bold, letterspaced capitals, like the links ──
+.article-title,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-family: $serif !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  font-size: 0.92rem !important;
+}
+
+.article-title {
+  font-size: 1rem !important;
+}
+
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-size: 0.85rem !important;
+}
+
+// Side panel contents echo the heading spacing
+.left.sidebar .toc ul a {
+  letter-spacing: 0.07em !important;
 }
