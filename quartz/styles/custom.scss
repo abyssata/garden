@@ -407,10 +407,6 @@ article iframe {
   box-sizing: border-box;
 }
 
-// Site name in the left panel only: "VIRIDITAS⸺"
-.left.sidebar .page-title a::after {
-  content: "\2E3A";
-}
 
 // A hairline closing the contents column
 .left.sidebar .toc::after {
@@ -421,8 +417,8 @@ article iframe {
   margin-top: 1.2rem;
 }
 
-// Site name: Georgia, lowercase italic, soft grey.
-// Gelasio (a free Georgia match, stored in the garden) steps in where Georgia isn't installed.
+// Site name: Gelasio (a Georgia-style serif stored in the garden, so it looks
+// identical on every device), lowercase italic, soft grey.
 @font-face {
   font-family: "Gelasio";
   src: url("static/fonts/gelasio-latin-400-italic.woff2") format("woff2");
@@ -433,7 +429,7 @@ article iframe {
 
 .left.sidebar .page-title,
 .left.sidebar .page-title a {
-  font-family: Georgia, "Gelasio", serif !important;
+  font-family: "Gelasio", Georgia, serif !important;
   font-style: italic !important;
   font-weight: 400 !important;
   text-transform: lowercase !important;
@@ -441,10 +437,51 @@ article iframe {
   color: #444444 !important;
 }
 
-// Sized so "viriditas⸺" ends just short of the subtitle
+// The long dash after the name is drawn as a line, so it's the same everywhere
+// and always ends in line with the end of the subtitle.
+.left.sidebar .page-title a {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.left.sidebar .page-title a::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 1.2em;
+  border-top: 2px solid currentColor;
+  margin-left: 0.04em;
+  transform: translateY(0.08em);
+}
+
 @media #{$desktop}, #{$tablet} {
   .left.sidebar .page-title {
     font-size: 1.85rem !important;
     margin-bottom: 0.55rem !important;
   }
+
+  .left.sidebar .page-title a {
+    width: 11rem;
+  }
+}
+
+@media #{$mobile} {
+  .left.sidebar .page-title a::after {
+    min-width: 2.2em;
+  }
+}
+
+// Text selection: a soft light grey
+::selection {
+  background: #efefef;
+  color: #111111;
+}
+::-moz-selection {
+  background: #efefef;
+  color: #111111;
+}
+
+// Post text: a touch smaller than the default
+#quartz-body .center article {
+  font-size: 1rem;
+  line-height: 1.75;
 }
