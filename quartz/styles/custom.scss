@@ -411,3 +411,12 @@ article iframe {
 .left.sidebar .page-title a::after {
   content: "\2E3A";
 }
+
+// A hairline closing the contents column
+.left.sidebar .toc::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-top: 1px solid #d6d6d6;
+  margin-top: 1.2rem;
+}
