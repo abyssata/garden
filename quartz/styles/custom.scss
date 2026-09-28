@@ -585,3 +585,22 @@ article h6 {
 .left.sidebar .toc ul a {
   letter-spacing: 0.07em !important;
 }
+
+// Justified paragraphs, with hyphenation so the spacing between words stays even.
+// Phones keep a ragged right edge: on a narrow screen justified text opens up large gaps.
+article p,
+article blockquote p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+
+@media #{$mobile} {
+  article p,
+  article blockquote p {
+    text-align: left;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+}
