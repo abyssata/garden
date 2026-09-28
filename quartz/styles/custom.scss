@@ -634,3 +634,27 @@ body article h6 {
   letter-spacing: 0.14em !important;
   color: #8a8a8a !important;
 }
+
+// Heading 4 directly beneath an image becomes a caption: small, centred capitals
+body article p:has(> img) + h4,
+body article p:has(> a > img) + h4 {
+  text-align: center;
+  font-family: $serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.08em !important;
+  color: #8a8a8a !important;
+  margin-top: 0.35rem !important;
+  margin-bottom: 1.8rem !important;
+  line-height: 1.5;
+}
+
+body article p:has(> img) + h4 a[role="anchor"],
+body article p:has(> a > img) + h4 a[role="anchor"] {
+  display: none;
+}
+
+body article p:has(> img) {
+  margin-bottom: 0 !important;
+}
