@@ -1,5 +1,5 @@
 ---
-title: Viriditas
+title: VIRIDITAS
 ---
 
 A place where notes grow in public.

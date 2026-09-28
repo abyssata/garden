@@ -282,7 +282,7 @@ footer {
     }
 
     .site-subtitle {
-      margin: -1.2rem 0 0.4rem 0 !important;
+      margin: -1rem 0 0.4rem 0 !important;
       width: 12rem;
     }
 
@@ -405,4 +405,9 @@ article iframe {
   max-width: 100% !important;
   height: auto;
   box-sizing: border-box;
+}
+
+// Site name in the left panel only: "VIRIDITAS⸺"
+.left.sidebar .page-title a::after {
+  content: "\2E3A";
 }
