@@ -420,3 +420,31 @@ article iframe {
   border-top: 1px solid #d6d6d6;
   margin-top: 1.2rem;
 }
+
+// Site name: Georgia, lowercase italic, soft grey.
+// Gelasio (a free Georgia match, stored in the garden) steps in where Georgia isn't installed.
+@font-face {
+  font-family: "Gelasio";
+  src: url("static/fonts/gelasio-latin-400-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.left.sidebar .page-title,
+.left.sidebar .page-title a {
+  font-family: Georgia, "Gelasio", serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  text-transform: lowercase !important;
+  letter-spacing: 0 !important;
+  color: #444444 !important;
+}
+
+// Sized so "viriditas⸺" ends just short of the subtitle
+@media #{$desktop}, #{$tablet} {
+  .left.sidebar .page-title {
+    font-size: 1.85rem !important;
+    margin-bottom: 0.55rem !important;
+  }
+}
