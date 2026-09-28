@@ -2,8 +2,6 @@
 title: VIRIDITAS
 ---
 
-A place where notes grow in public.
-
-This page is the front door of the garden. Rewrite it however you like — it's `index.md` in your garden vault.
+> Hermetist, alchemist, given over to the indwelling opus. A private archive of psychic descent and transfigured return—fragments concerning mysticism, individuation, numinous rupture, psychic transmutation, and the revelation of spirit to itself.
 
 ![[hilma.png]]
