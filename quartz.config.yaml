@@ -4,9 +4,11 @@ configuration:
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
-  analytics: null
+  analytics:
+    provider: goatcounter
+    websiteId: abyssata
   locale: en-US
-  baseUrl: USERNAME.github.io/garden
+  baseUrl: abyssata.github.io/garden
   ignorePatterns:
     - private
     - templates
