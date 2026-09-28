@@ -604,3 +604,33 @@ article blockquote p {
     -webkit-hyphens: manual;
   }
 }
+
+// ── Heading scale: every level in capitals, each with its own voice ──
+body article h1 { font-size: 1.05rem !important; }
+body article h2 { font-size: 0.92rem !important; }
+body article h3 {
+  font-size: 0.82rem !important;
+  color: #666666 !important;
+}
+body article h4 {
+  font-family: "Gelasio", Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.95rem !important;
+  color: #444444 !important;
+}
+body article h5 {
+  font-family: "Gelasio", Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.82rem !important;
+  color: #777777 !important;
+}
+body article h6 {
+  font-weight: 400 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.14em !important;
+  color: #8a8a8a !important;
+}
