@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: The Garden
+  pageTitle: Viriditas
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -79,10 +79,10 @@ plugins:
     enabled: true
     order: 40
   - source: "@quartz-community/table-of-contents"
-    enabled: false
+    enabled: true
     order: 50
     layout:
-      position: right
+      position: left
       priority: 30
   - source: "@quartz-community/crawl-links"
     enabled: true
@@ -171,8 +171,8 @@ plugins:
   - source: "@quartz-community/search"
     enabled: true
     layout:
-      position: beforeBody
-      priority: 2
+      position: left
+      priority: 20
   - source: "@quartz-community/backlinks"
     enabled: true
     layout:
@@ -196,8 +196,8 @@ plugins:
   - source: "@quartz-community/page-title"
     enabled: true
     layout:
-      position: beforeBody
-      priority: 1
+      position: left
+      priority: 10
   - source: "@quartz-community/darkmode"
     enabled: false
     layout:

@@ -19,74 +19,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// One narrow column, centred
-#quartz-body {
-  display: block !important;
-}
-
-#quartz-body .sidebar {
-  display: none !important;
-}
-
-#quartz-body .center,
-footer {
-  width: auto !important;
+// Reading column: kept narrow between the side panels
+#quartz-body .center {
   min-width: 0 !important;
   max-width: 660px !important;
+  width: 100%;
   box-sizing: border-box;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-#quartz-body .center {
-  padding: 3rem 1.25rem 2rem !important;
-}
-
-// Header: title, then search
-.page-header {
-  margin-top: 0 !important;
-}
-
+// Left panel: site name, then search
 .page-title {
   display: block !important;
-  margin: 0 0 0.25rem 0 !important;
+  margin: 0 0 0.5rem 0 !important;
   font-family: $serif;
   font-size: 1.1rem !important;
-  font-weight: normal;
-  letter-spacing: 0.03em;
+  font-weight: bold !important;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.25;
 
   a {
     color: #111111 !important;
+    font-weight: bold !important;
   }
 }
 
-.search {
-  max-width: none !important;
-  margin: 0.5rem 0 2.25rem 0;
+.search .search-button {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e4 !important;
+  border-radius: 4px !important;
+  font-family: $serif;
 
-  .search-button {
-    background: none !important;
-    border: none !important;
-    border-bottom: 1px solid #e4e4e4 !important;
-    border-radius: 0 !important;
-    padding: 0 0 2px 0 !important;
-    height: auto !important;
-    width: auto !important;
-    font-family: $serif;
+  p {
+    font-size: 0.85rem;
+    color: #8a8a8a;
+  }
 
-    p {
-      margin: 0 !important;
-      line-height: 1.2;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #111111;
-    }
+  svg {
+    stroke: #8a8a8a;
+  }
+}
 
-    svg {
-      display: none;
+// Right panel: table of contents
+.toc {
+  font-family: $serif;
+
+  button h3,
+  .toc-header h3 {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em;
+    color: #8a8a8a !important;
+  }
+
+  ul a,
+  a {
+    border-bottom: none !important;
+    font-size: 0.9rem;
+    color: #555555 !important;
+
+    &:hover,
+    &.in-view {
+      color: #111111 !important;
     }
   }
 }
@@ -218,6 +213,9 @@ ul.section-ul {
 }
 
 footer {
+  max-width: 660px;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border-top: 1px solid #e4e4e4;
   margin-top: 1rem !important;
   padding: 1.25rem 1.25rem 2rem !important;
@@ -233,4 +231,123 @@ footer {
   .search {
     display: none !important;
   }
+}
+
+// Phones: site name on the left, search on the right
+@media #{$mobile} {
+  #quartz-body .left.sidebar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    padding: 1rem 1.5rem 1.25rem !important;
+  }
+
+  .left.sidebar .page-title {
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+
+  .left.sidebar .search {
+    flex: 0 1 9rem !important;
+  }
+
+  .left.sidebar .toc {
+    display: none !important;
+  }
+}
+
+// Table of contents sits under search in the left panel
+.left.sidebar .toc {
+  margin-top: 1.5rem;
+}
+
+// Left panel: title, search and contents share one column width
+@media #{$desktop}, #{$tablet} {
+  .left.sidebar {
+    .page-title,
+    .search,
+    .toc {
+      width: 12rem !important;
+      max-width: 12rem !important;
+      box-sizing: border-box;
+    }
+
+    .page-title {
+      font-size: 1.6rem !important;
+      line-height: 1 !important;
+      white-space: nowrap;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .site-subtitle {
+      margin: -1.2rem 0 0.4rem 0 !important;
+      width: 12rem;
+    }
+
+    .search {
+      margin: 0.4rem 0 0.4rem 0 !important;
+    }
+
+    .search .search-button {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    .toc {
+      margin-top: 0.75rem;
+
+      .toc-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// "A digital garden by THEOPTIA."
+.site-subtitle {
+  font-family: $serif;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #8a8a8a;
+  margin: 0;
+
+  a {
+    color: #555555 !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+
+    &:hover {
+      color: #111111 !important;
+    }
+  }
+}
+
+@media #{$mobile} {
+  #quartz-body .left.sidebar {
+    flex-wrap: wrap !important;
+    row-gap: 0.25rem !important;
+  }
+
+  .left.sidebar .site-subtitle {
+    order: 3;
+    flex-basis: 100%;
+  }
+}
+
+.popover .site-subtitle,
+.preview-container .site-subtitle {
+  display: none !important;
+}
+
+// Backlinks in capitals
+.backlinks ul li a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }

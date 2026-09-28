@@ -1,5 +1,5 @@
 ---
-title: The Garden
+title: Viriditas
 ---
 
 A place where notes grow in public.
