@@ -6,8 +6,8 @@ function Subtitle({ displayClass }: QuartzComponentProps) {
   return (
     <p class={classNames(displayClass, "site-subtitle")}>
       A digital garden by{" "}
-      <a class="external" href="https://theoptia.tumblr.com" target="_blank" rel="noopener">
-        THEOPTIA
+      <a class="external" href="https://abyssata.blog">
+        ABYSSATA
       </a>
       .
     </p>
