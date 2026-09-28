@@ -352,11 +352,12 @@ footer {
   letter-spacing: 0.02em;
 }
 
-// Home page only: an image at the foot of the note sits centred, with room above
+// Home page only: an image at the foot of the note sits centred, with room above.
+// It stays well inside the text column; add a width in Obsidian (![[file.png|200]]) to make it smaller.
 body[data-slug="index"] #quartz-body .center article img {
   display: block;
   margin: 3rem auto 0;
-  max-width: 160px;
+  max-width: 80% !important;
   height: auto;
   border-radius: 0;
 }
@@ -395,4 +396,13 @@ footer a {
 .search .results-container .result-card {
   padding: 0.9em 1em !important;
   border-bottom: 1px solid #e4e4e4 !important;
+}
+
+// Images anywhere never extend past the text column
+article img,
+article video,
+article iframe {
+  max-width: 100% !important;
+  height: auto;
+  box-sizing: border-box;
 }
