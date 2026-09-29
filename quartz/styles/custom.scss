@@ -21,6 +21,7 @@
 //   #767676  quiet text: subtitle, dates, captions, glosses, menu links
 //   #d0d0d0  faint lines under links
 //   #e4e4e4  hairlines and borders
+//   #5c2229  oxblood: the name, group names, page titles, links, current page
 // ════════════════════════════════════════════════════════════════════
 
 $heading-grey: #4c4c4c; // the menu's group names (Threshold, Interiority)
@@ -35,6 +36,12 @@ $body-ink: #4a4a4a;
 $quiet: #767676;
 $line: #d0d0d0;
 $hairline: #e4e4e4;
+
+// The one colour: oxblood, like dried ink. Used for the name, the group
+// names, page titles, links, the page you're on, and the circle.
+$accent: #5c2229;
+$accent-dark: #43161b;             // on hover
+$accent-line: rgba(92, 34, 41, 0.3); // the faint line beneath links
 
 // ── 1. Fonts & colours ──────────────────────────────────────────────
 // Spectral: a light, refined book serif stored in the garden (quartz/static/fonts),
@@ -138,7 +145,7 @@ hr {
 // ── 3. Left panel ───────────────────────────────────────────────────
 // Name, subtitle, search and the menu share one 12rem column.
 
-// Site name: "EPINOIA" in bold spaced capitals, like THRESHOLD, with a
+// Site name: "TEMENOS" in bold spaced capitals, like THRESHOLD, with a
 // hairline running to the column's edge, in line with the subtitle's end.
 .page-title {
   display: block !important;
@@ -153,7 +160,7 @@ hr {
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.14em !important;
-  color: $ink !important;
+  color: $accent !important;
 }
 
 .left.sidebar .page-title {
@@ -183,12 +190,12 @@ hr {
   margin: 0;
 
   a {
-    color: $ink !important;
+    color: $accent !important;
     font-size: 0.8rem;
     letter-spacing: 0.04em;
 
     &:hover {
-      color: $ink-dark !important;
+      color: $accent-dark !important;
     }
   }
 }
@@ -254,7 +261,7 @@ hr {
     padding: 0 0 0.6rem 0;
     margin: 0 0 0.92rem 0;
     cursor: pointer;
-    color: #555;
+    color: $accent;
     transition: margin-bottom $fold;
 
     &::before,
@@ -280,7 +287,7 @@ hr {
     }
 
     &:hover {
-      color: $ink-dark;
+      color: $accent-dark;
     }
   }
 
@@ -319,7 +326,7 @@ hr {
     padding: 0;
     margin: 0 0 0.45rem 0;
     cursor: pointer;
-    color: $heading-grey;
+    color: $accent;
     transition: margin-bottom $fold, color 0.15s ease;
     font-family: $caps;
     font-weight: 600;
@@ -343,7 +350,7 @@ hr {
     }
 
     &:hover {
-      color: $ink-dark;
+      color: $accent-dark;
     }
   }
 
@@ -422,8 +429,8 @@ hr {
     }
 
     &.active {
-      color: $ink-dark !important;
-      text-decoration-color: $ink !important;
+      color: $accent !important;
+      text-decoration-color: $accent-line !important;
     }
 
     // A pale em dash before every section…
@@ -443,7 +450,7 @@ hr {
     }
 
     &.active::before {
-      color: $ink-dark;
+      color: $accent;
     }
   }
 
@@ -643,21 +650,21 @@ article blockquote p {
   hyphenate-limit-chars: 7 3 3;
 }
 
-// Links: soft grey with a faint line beneath that darkens on hover
+// Links: oxblood with a faint line beneath that deepens on hover
 a,
 a.internal,
 a.external {
-  color: $ink !important;
+  color: $accent !important;
   background-color: transparent !important;
   font-weight: normal;
   text-decoration: none;
-  border-bottom: 1px solid $line;
+  border-bottom: 1px solid $accent-line;
   padding: 0 0 1px 0 !important;
   border-radius: 0 !important;
   transition: border-color 0.15s ease;
 
   &:hover {
-    border-bottom-color: $ink;
+    border-bottom-color: $accent;
   }
 }
 
@@ -816,7 +823,7 @@ article h6 {
   font-size: 1.05rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.16em !important;
-  color: $ink !important;
+  color: $accent !important;
   margin: 0 0 0.25rem 0 !important;
 
   &::after {
