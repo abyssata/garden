@@ -725,6 +725,7 @@ body article p:has(> a > img) + h4 {
   text-align: center;
   font-family: $serif !important;
   font-style: normal !important;
+  text-transform: uppercase !important;
   font-weight: 400 !important;
   font-size: 0.62rem !important;
   letter-spacing: 0.09em !important;
@@ -757,7 +758,9 @@ h6,
   color: $ink-dark;
 }
 
-// Note titles and headings in writing: small, bold, letterspaced capitals
+// Page titles and headings in writing, set in the same voices as the menu:
+// spaced capitals with a hairline (like THRESHOLD) and Gelasio italic
+// (like the site name and the entries). No bold anywhere.
 .article-title,
 article h1,
 article h2,
@@ -765,53 +768,79 @@ article h3,
 article h4,
 article h5,
 article h6 {
-  font-weight: bold !important;
+  font-weight: 400 !important;
+  line-height: 1.3;
+}
+
+// The page title: widely spaced capitals, a hairline running to the edge
+.article-title {
+  display: flex !important;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: $serif !important;
   font-style: normal !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.09em !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.22em !important;
+  color: $ink !important;
+  margin: 0 0 0.25rem 0 !important;
+
+  &::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid $hairline;
+  }
+}
+
+// Italic headings: H1, H2 and H4 (an H4 directly beneath an image stays a
+// caption; see the Images section above)
+body article h1,
+body article h2,
+body article h4,
+body article h6 {
+  font-family: $gelasio !important;
+  font-style: italic !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+body article h1 {
+  font-size: 1.45rem !important;
   color: $ink !important;
 }
 
-.article-title {
-  font-size: 1rem !important;
-  margin: 0 0 0.25rem 0 !important;
-}
-
-// The scale: each level with its own voice
-body article h1 {
-  font-size: 1.05rem !important;
-}
-
 body article h2 {
-  font-size: 0.92rem !important;
-}
-
-body article h3 {
-  font-size: 0.82rem !important;
-  color: #666666 !important;
+  font-size: 1.18rem !important;
+  color: $ink !important;
 }
 
 body article h4 {
-  font-family: $gelasio !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.06em !important;
-  font-size: 0.95rem !important;
-}
-
-body article h5 {
-  font-family: $gelasio !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.06em !important;
-  font-size: 0.82rem !important;
-  color: #777777 !important;
+  font-size: 0.98rem !important;
+  color: #666666 !important;
 }
 
 body article h6 {
-  font-weight: 400 !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.14em !important;
+  font-size: 0.86rem !important;
+  color: #8a8a8a !important;
+}
+
+// Spaced-capital headings: H3 and H5
+body article h3,
+body article h5 {
+  font-family: $serif !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+}
+
+body article h3 {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.18em !important;
+  color: $heading-grey !important;
+}
+
+body article h5 {
+  font-size: 0.7rem !important;
+  letter-spacing: 0.2em !important;
   color: $quiet !important;
 }
 
