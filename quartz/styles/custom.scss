@@ -187,14 +187,15 @@ hr {
   border: none !important;
   border-bottom: 1px solid $line !important;
   border-radius: 0 !important;
-  padding: 0 0 0.35rem 0 !important;
+  padding: 0 0 0.1rem 0 !important;
   height: auto !important;
-  line-height: 1.3;
+  line-height: 1.15;
   font-family: $serif;
   gap: 0.45rem;
 
   p {
     margin: 0;
+    line-height: 1.15;
     font-family: $gelasio;
     font-style: italic;
     font-size: 0.9rem;
