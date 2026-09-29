@@ -6,7 +6,7 @@
 //  Contents
 //   1. Fonts & colours
 //   2. Page & reading column
-//   3. Left panel: name, subtitle, search, In Abyssum
+//   3. Left panel: name, subtitle, search, the menu (❧)
 //   4. Phones
 //   5. Writing: paragraphs, links, quotations, code, images, captions
 //   6. Headings
@@ -23,7 +23,7 @@
 //   #e4e4e4  hairlines and borders
 // ════════════════════════════════════════════════════════════════════
 
-$heading-grey: #4c4c4c; // In Abyssum's group names (Threshold, Interiority)
+$heading-grey: #4c4c4c; // the menu's group names (Threshold, Interiority)
 $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
 $serif: "Times New Roman", Times, serif;
 $gelasio: "Gelasio", Georgia, serif;
@@ -126,7 +126,7 @@ hr {
 }
 
 // ── 3. Left panel ───────────────────────────────────────────────────
-// Name, subtitle, search and In Abyssum share one 12rem column.
+// Name, subtitle, search and the menu share one 12rem column.
 
 // Site name: "viriditas⸺" in lowercase Gelasio italic, soft grey.
 // The dash is drawn as a line so it always ends in line with the subtitle.
@@ -222,7 +222,7 @@ hr {
   }
 }
 
-// In Abyssum: a heading that opens and closes the list of sections.
+// The menu: a leaf that opens and closes the list of sections.
 // Folding: the heading and its list sit in a two-row grid; the list's row
 // eases between its full height (1fr) and nothing (0fr), so it glides open
 // and shut at its true height.
@@ -232,33 +232,34 @@ hr {
   grid-template-rows: auto 1fr;
   transition: grid-template-rows $fold;
 
+  // The top of the menu: a leaf (❧) between two hairlines. Clicking it
+  // folds the menu; the leaf turns a little while the menu is folded.
   .sections-toggle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 0.7rem;
     width: 100%;
     background: none;
     border: none;
     padding: 0 0 0.6rem 0;
-    border-bottom: 1px solid $hairline;
     margin: 0 0 0.92rem 0;
     cursor: pointer;
-    color: $ink;
+    color: #555;
     transition: margin-bottom $fold;
 
-    span {
-      font-family: $serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 1rem;
-      letter-spacing: 0.04em; // set like ABYSSATA
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-top: 1px solid $hairline;
     }
 
-    .fold {
-      width: 16px;
-      height: 16px;
-      color: $quiet;
-      transition: transform $fold;
+    .fleuron {
+      width: 2.3rem;
+      height: auto;
+      display: block;
+      transition: transform $fold, color 0.15s ease;
     }
 
     &:hover {
@@ -281,7 +282,7 @@ hr {
     line-height: 1.4;
   }
 
-  // Groups inside In Abyssum (Threshold, Interiority): light spaced capitals
+  // Groups inside the menu (Threshold, Interiority): light spaced capitals
   // that fold; the group holding the current page opens, the others stay folded.
   li.group {
     margin: 0 0 0.55rem 0;
@@ -426,8 +427,8 @@ hr {
       margin-bottom: 0;
     }
 
-    .sections-toggle .fold {
-      transform: rotate(-90deg);
+    .sections-toggle .fleuron {
+      transform: rotate(-35deg);
     }
 
     > ul {
@@ -535,9 +536,6 @@ hr {
     margin: 0.4rem 0 0 0;
 
     .sections-toggle {
-      width: auto;
-      justify-self: start;
-      gap: 0.4rem;
       margin-bottom: 0.6rem;
     }
 

@@ -17,6 +17,8 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 type Entry = { title: string; folder?: string; home?: boolean }
 type Group = { title: string; entries: Entry[] }
 
+// The menu has no visible heading: a leaf ornament (❧) sits between two
+// hairlines instead. HEADING is still read aloud by screen readers.
 const HEADING = "In Abyssum"
 
 const GROUPS: Group[] = [
@@ -36,6 +38,22 @@ const GROUPS: Group[] = [
     ],
   },
 ]
+
+// ❧, drawn as a shape so every device shows the same leaf
+const Fleuron = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="160 -1156 1395 810"
+    class="fleuron"
+    aria-hidden="true"
+  >
+    <path
+      transform="scale(1,-1)"
+      fill="currentColor"
+      d="M479 830Q416 816 371 780Q305 729 278 626Q357 655 419 713Q480 769 480 821Q480 825 479 830ZM990 346Q617 346 617 600Q617 669 735 735Q687 790 633 818Q595 838 558 838Q558 838 554 838Q556 751 481 671Q385 569 285 554Q310 483 377 483Q420 483 460 526Q468 496 468 447Q468 372 323 372Q216 372 196 543Q196 543 160 543Q160 543 160 615Q160 615 199 615Q229 757 330 837Q407 897 470 899Q455 917 419 935Q384 953 323 967Q251 984 251 1054Q251 1156 349 1156Q337 1127 337 1092Q337 1054 480 970Q546 931 550 906Q611 906 652 887Q695 867 751 819Q720 899 720 942Q720 1007 781 1046Q827 1075 936 1075Q1152 1075 1209 710Q1233 556 1334 556Q1432 556 1432 616Q1432 646 1420 664Q1409 681 1409 708Q1409 768 1489 768Q1555 768 1555 687Q1555 514 1308 416Q1132 346 990 346Z"
+    />
+  </svg>
+)
 
 const Chevron = ({ size }: { size: number }) => (
   <svg
@@ -65,9 +83,8 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 
   return (
     <nav class={classNames(displayClass, "garden-sections")} aria-label="Sections">
-      <button type="button" class="sections-toggle" aria-expanded="true">
-        <span>{HEADING}</span>
-        <Chevron size={24} />
+      <button type="button" class="sections-toggle" aria-expanded="true" aria-label={HEADING}>
+        <Fleuron />
       </button>
       <ul>
         {GROUPS.map((group) => {
@@ -109,7 +126,7 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 }
 
 // Behaviour in the browser:
-//  · In Abyssum opens on arrival; if a reader closes it, it stays closed
+//  · The menu opens on arrival (clicking the leaf folds it); if a reader closes it, it stays closed
 //    as they move between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
 //    and the other groups fold. Any group can be opened or folded by clicking.
