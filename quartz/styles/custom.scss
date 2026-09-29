@@ -6,7 +6,7 @@
 //  Contents
 //   1. Fonts & colours
 //   2. Page & reading column
-//   3. Left panel: name, subtitle, search, De Profundis
+//   3. Left panel: name, subtitle, search, In Abyssum
 //   4. Phones
 //   5. Writing: paragraphs, links, quotations, code, images, captions
 //   6. Headings
@@ -17,11 +17,13 @@
 //   #111111  darkest: hover and the current section
 //   #444444  headings, links, the site name
 //   #4a4a4a  body text
-//   #767676  quiet text: subtitle, dates, captions, glosses
+//   #4c4c4c  group names in the menu (Threshold, Interiority)
+//   #767676  quiet text: subtitle, dates, captions, glosses, menu links
 //   #d0d0d0  faint lines under links
 //   #e4e4e4  hairlines and borders
 // ════════════════════════════════════════════════════════════════════
 
+$heading-grey: #4c4c4c; // In Abyssum's group names (Threshold, Interiority)
 $serif: "Times New Roman", Times, serif;
 $gelasio: "Gelasio", Georgia, serif;
 
@@ -123,7 +125,7 @@ hr {
 }
 
 // ── 3. Left panel ───────────────────────────────────────────────────
-// Name, subtitle, search and De Profundis share one 12rem column.
+// Name, subtitle, search and In Abyssum share one 12rem column.
 
 // Site name: "viriditas⸺" in lowercase Gelasio italic, soft grey.
 // The dash is drawn as a line so it always ends in line with the subtitle.
@@ -219,7 +221,7 @@ hr {
   }
 }
 
-// De Profundis: a heading that opens and closes the list of sections
+// In Abyssum: a heading that opens and closes the list of sections
 .garden-sections {
   margin: 1.1rem 0 0 0;
 
@@ -241,7 +243,7 @@ hr {
       font-weight: bold;
       text-transform: uppercase;
       font-size: 1rem;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.16em;
     }
 
     .fold {
@@ -271,7 +273,7 @@ hr {
     line-height: 1.4;
   }
 
-  // Groups inside De Profundis (Threshold, Interiority): light spaced capitals
+  // Groups inside In Abyssum (Threshold, Interiority): light spaced capitals
   // that fold; the group holding the current page opens, the others stay folded.
   li.group {
     margin: 0 0 0.55rem 0;
@@ -288,7 +290,7 @@ hr {
     padding: 0;
     margin: 0 0 0.45rem 0;
     cursor: pointer;
-    color: $quiet;
+    color: $heading-grey;
     font-family: $serif;
     font-weight: 400;
     text-transform: uppercase;
@@ -311,7 +313,7 @@ hr {
     }
 
     &:hover {
-      color: $ink;
+      color: $ink-dark;
     }
   }
 
@@ -364,7 +366,7 @@ hr {
     letter-spacing: 0 !important;
     font-size: 0.84rem !important;
     line-height: 1.35 !important;
-    color: $ink !important;
+    color: $quiet !important;
     border-bottom: none !important;
     padding-bottom: 0 !important;
     text-decoration: underline !important;
@@ -374,6 +376,7 @@ hr {
     transition: text-decoration-color 0.15s ease, transform 0.2s ease;
 
     &:hover {
+      color: $ink !important;
       text-decoration-color: $line !important;
     }
 

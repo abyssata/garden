@@ -3,7 +3,7 @@ import { classNames } from "../util/lang"
 import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 
 // ─────────────────────────────────────────────────────────────────────
-// The side-panel navigation: "De Profundis", with folding groups inside.
+// The side-panel navigation: "In Abyssum", with folding groups inside.
 //
 // Each group has a title and a list of entries. An entry is either:
 //   { title: "Prologue", home: true }            → the home page
@@ -17,7 +17,7 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 type Entry = { title: string; folder?: string; home?: boolean }
 type Group = { title: string; entries: Entry[] }
 
-const HEADING = "De Profundis"
+const HEADING = "In Abyssum"
 
 const GROUPS: Group[] = [
   {
@@ -109,7 +109,7 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 }
 
 // Behaviour in the browser:
-//  · De Profundis opens on arrival; if a reader closes it, it stays closed
+//  · In Abyssum opens on arrival; if a reader closes it, it stays closed
 //    as they move between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
 //    and the other groups fold. Any group can be opened or folded by clicking.
