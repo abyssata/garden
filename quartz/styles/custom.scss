@@ -270,8 +270,8 @@ hr {
     line-height: 1.4;
   }
 
-  // The sections themselves: lowercase italic, underlined only on hover
-  // and for the section you're in, which also gets a short dash.
+  // The sections themselves: lowercase italic, each after a pale em dash.
+  // Underlined on hover; the section you're in steps forward, dark and underlined.
   ul a {
     display: inline-block;
     font-family: $gelasio !important;
@@ -288,7 +288,7 @@ hr {
     text-decoration-color: transparent !important;
     text-decoration-thickness: 1px !important;
     text-underline-offset: 3px;
-    transition: text-decoration-color 0.15s ease;
+    transition: text-decoration-color 0.15s ease, transform 0.2s ease;
 
     &:hover {
       text-decoration-color: $line !important;
@@ -299,14 +299,23 @@ hr {
       text-decoration-color: $ink !important;
     }
 
-    &.active::before {
-      content: "";
+    // A pale em dash before every section…
+    &::before {
+      content: "\2014";
       display: inline-block;
-      width: 0.9em;
-      border-top: 1.5px solid currentColor;
-      margin-right: 0.45em;
-      vertical-align: middle;
-      transform: translateY(-0.1em);
+      margin-right: 0.2em;
+      font-style: normal;
+      color: #b5b5b5;
+      text-decoration: none;
+    }
+
+    // …and the one you're in steps forward, its dash dark
+    &.active {
+      transform: translateX(0.6em);
+    }
+
+    &.active::before {
+      color: $ink-dark;
     }
   }
 
@@ -434,6 +443,11 @@ hr {
 
     ul a {
       font-size: 0.85rem !important;
+    }
+
+    // no stepping forward in the wrapped row
+    ul a.active {
+      transform: none;
     }
   }
 
