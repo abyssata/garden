@@ -292,8 +292,8 @@ hr {
     font-family: $serif;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 0.66rem;
-    letter-spacing: 0.22em;
+    font-size: 0.86rem;
+    letter-spacing: 0.18em;
 
     &::after {
       content: "";
@@ -343,7 +343,7 @@ hr {
     font-weight: 400 !important;
     text-transform: lowercase !important;
     letter-spacing: 0 !important;
-    font-size: 0.9rem !important;
+    font-size: 0.84rem !important;
     line-height: 1.35 !important;
     color: $ink !important;
     border-bottom: none !important;
@@ -507,11 +507,15 @@ hr {
     }
 
     li.group {
-      margin: 0 0 0.35rem 0;
+      margin: 0 0 0.7rem 0;
+    }
+
+    .group-toggle {
+      font-size: 0.78rem;
     }
 
     ul a {
-      font-size: 0.85rem !important;
+      font-size: 0.8rem !important;
     }
 
     // no stepping forward in the wrapped row
