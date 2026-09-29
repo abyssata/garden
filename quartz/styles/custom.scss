@@ -24,6 +24,7 @@
 // ════════════════════════════════════════════════════════════════════
 
 $heading-grey: #4c4c4c; // In Abyssum's group names (Threshold, Interiority)
+$fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
 $serif: "Times New Roman", Times, serif;
 $gelasio: "Gelasio", Georgia, serif;
 
@@ -221,9 +222,15 @@ hr {
   }
 }
 
-// In Abyssum: a heading that opens and closes the list of sections
+// In Abyssum: a heading that opens and closes the list of sections.
+// Folding: the heading and its list sit in a two-row grid; the list's row
+// eases between its full height (1fr) and nothing (0fr), so it glides open
+// and shut at its true height.
 .garden-sections {
   margin: 1.1rem 0 0 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: grid-template-rows $fold;
 
   .sections-toggle {
     display: flex;
@@ -237,6 +244,7 @@ hr {
     margin: 0 0 0.75rem 0;
     cursor: pointer;
     color: $ink;
+    transition: margin-bottom $fold;
 
     span {
       font-family: $serif;
@@ -250,7 +258,7 @@ hr {
       width: 16px;
       height: 16px;
       color: $quiet;
-      transition: transform 0.2s ease;
+      transition: transform $fold;
     }
 
     &:hover {
@@ -263,9 +271,9 @@ hr {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    max-height: 40rem;
+    min-height: 0;
     opacity: 1;
-    transition: max-height 0.25s ease, opacity 0.2s ease;
+    transition: opacity 0.3s ease;
   }
 
   li {
@@ -277,6 +285,9 @@ hr {
   // that fold; the group holding the current page opens, the others stay folded.
   li.group {
     margin: 0 0 0.55rem 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    transition: grid-template-rows $fold;
   }
 
   // Light, widely spaced capitals with a hairline running to the edge
@@ -291,6 +302,7 @@ hr {
     margin: 0 0 0.45rem 0;
     cursor: pointer;
     color: $heading-grey;
+    transition: margin-bottom $fold, color 0.15s ease;
     font-family: $serif;
     font-weight: 400;
     text-transform: uppercase;
@@ -309,7 +321,7 @@ hr {
       order: 2;
       width: 12px;
       height: 12px;
-      transition: transform 0.2s ease;
+      transition: transform $fold;
     }
 
     &:hover {
@@ -341,6 +353,8 @@ hr {
   }
 
   li.group.closed {
+    grid-template-rows: auto 0fr;
+
     .group-toggle {
       margin-bottom: 0;
     }
@@ -350,7 +364,6 @@ hr {
     }
 
     > ul {
-      max-height: 0;
       opacity: 0;
     }
   }
@@ -407,18 +420,27 @@ hr {
   }
 
   &.collapsed {
+    grid-template-rows: auto 0fr;
+
     .sections-toggle {
       margin-bottom: 0;
     }
 
-    .fold {
+    .sections-toggle .fold {
       transform: rotate(-90deg);
     }
 
-    ul {
-      max-height: 0;
+    > ul {
       opacity: 0;
     }
+  }
+}
+
+// Readers who ask their device for less motion get instant folding
+@media (prefers-reduced-motion: reduce) {
+  .garden-sections,
+  .garden-sections * {
+    transition: none !important;
   }
 }
 
@@ -514,8 +536,13 @@ hr {
 
     .sections-toggle {
       width: auto;
+      justify-self: start;
       gap: 0.4rem;
       margin-bottom: 0.5rem;
+    }
+
+    &.collapsed .sections-toggle {
+      margin-bottom: 0;
     }
 
     li.group > ul {
