@@ -393,6 +393,16 @@ hr {
       text-decoration-color: $line !important;
     }
 
+    // An entry that isn't linked yet: same look, no hover, no pointer
+    &.unlinked {
+      cursor: default;
+
+      &:hover {
+        color: $quiet !important;
+        text-decoration-color: transparent !important;
+      }
+    }
+
     &.active {
       color: $ink-dark !important;
       text-decoration-color: $ink !important;

@@ -8,6 +8,7 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 // Each group has a title and a list of entries. An entry is either:
 //   { title: "Prologue", home: true }            → the home page
 //   { title: "Psyche", folder: "psyche" }        → a folder in the vault
+//   { title: "Daybook" }                         → a name only, not yet linked
 //
 // The group holding the page you're on opens; the others stay folded
 // until clicked. To add an entry, add a line to a group below (and for a
@@ -36,6 +37,11 @@ const GROUPS: Group[] = [
       { title: "Form", folder: "form" },
       { title: "Creation", folder: "creation" },
     ],
+  },
+  {
+    title: "Marginalia",
+    // Not linked yet: add folder: "…" to each once its pages exist
+    entries: [{ title: "Daybook" }, { title: "Scratchpad" }, { title: "To-do" }],
   },
 ]
 
@@ -78,7 +84,9 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
   const slug = fileData.slug! as FullSlug
 
   const isActive = (e: Entry) =>
-    e.home
+    !e.home && !e.folder
+      ? false
+      : e.home
       ? current === "index"
       : current === `${e.folder}/index` || current.startsWith(`${e.folder}/`)
 
@@ -108,13 +116,19 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
               <ul>
                 {group.entries.map((e) => (
                   <li>
-                    <a
-                      class={isActive(e) ? "active" : ""}
-                      data-home={e.home ? "true" : undefined}
-                      href={e.home ? pathToRoot(slug) : resolveRelative(slug, `${e.folder}/` as FullSlug)}
-                    >
-                      {e.title}
-                    </a>
+                    {e.home || e.folder ? (
+                      <a
+                        class={isActive(e) ? "active" : ""}
+                        data-home={e.home ? "true" : undefined}
+                        href={
+                          e.home ? pathToRoot(slug) : resolveRelative(slug, `${e.folder}/` as FullSlug)
+                        }
+                      >
+                        {e.title}
+                      </a>
+                    ) : (
+                      <a class="unlinked">{e.title}</a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -157,7 +171,7 @@ function setupGardenSections() {
     const btn = nav.querySelector(".sections-toggle")
     if (!btn) continue
 
-    for (const a of nav.querySelectorAll(".group a")) {
+    for (const a of nav.querySelectorAll(".group a[href]")) {
       const target = norm(new URL(a.getAttribute("href"), location.href).pathname)
       const isHome = a.dataset.home === "true"
       a.classList.toggle("active", isHome ? here === target : here === target || here.startsWith(target))
