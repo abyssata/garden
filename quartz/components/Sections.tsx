@@ -18,7 +18,7 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 type Entry = { title: string; folder?: string; home?: boolean }
 type Group = { title: string; entries: Entry[] }
 
-// The menu has no visible heading: a floral heart (❦) sits between two
+// The menu has no visible heading: a circumpunct (☉) sits between two
 // hairlines instead. HEADING is still read aloud by screen readers.
 const HEADING = "In Abyssum"
 
@@ -45,20 +45,18 @@ const GROUPS: Group[] = [
   },
 ]
 
-// ❦ (floral heart), drawn as a shape so every device shows the same one.
-// Outline from Noto Sans Symbols 2 (SIL Open Font License).
+// ☉ The circumpunct: a circle around a centre point. Alchemical sign for
+// gold and the sun, and the simplest picture of a temenos (bounded ground
+// around a centre). Drawn as a shape so every device shows the same one.
 const Fleuron = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="51 -686 682 824"
+    viewBox="0 0 100 100"
     class="fleuron"
     aria-hidden="true"
   >
-    <path
-      transform="scale(1,-1)"
-      fill="currentColor"
-      d="M401 318 391 340 420 397Q427 410 431.0 421.5Q435 433 439 444Q376 465 327 508L289 542Q207 616 167 616Q105 616 105 556Q105 536 115.0 524.0Q125 512 139 512Q150 512 156.5 514.5Q163 517 173 524Q170 496 153.5 480.0Q137 464 109 464Q81 464 66.0 485.5Q51 507 51 536Q51 586 83.0 620.0Q115 654 173 654Q236 654 343 568Q337 588 337 616Q337 645 357.5 665.5Q378 686 413 686Q455 686 481.0 655.0Q507 624 507 576Q507 538 483 478Q497 471 521.5 466.5Q546 462 565 462Q604 462 622.5 478.0Q641 494 641 516Q641 534 626 544Q611 555 611 578Q611 603 628.0 619.5Q645 636 671 636Q698 636 715.5 615.5Q733 595 733 566Q733 542 714.0 509.0Q695 476 656 451Q616 426 559 426Q506 426 465 436Q448 392 401 318ZM455 492Q460 512 462.5 530.0Q465 548 465 564Q465 595 449.5 616.5Q434 638 409 638Q386 638 374.5 626.0Q363 614 363 594Q363 587 364.0 575.5Q365 564 367 550Q391 529 414 516ZM465 -138Q417 -138 363.0 -115.5Q309 -93 260.0 -53.5Q211 -14 177 38Q127 115 127 202Q127 260 144.0 307.0Q161 354 193.5 382.0Q226 410 273 410Q326 410 354.0 377.5Q382 345 385 274H401Q415 324 451.0 354.0Q487 384 539 384Q598 384 631.5 345.0Q665 306 665 240Q665 205 641.5 166.0Q618 127 558 88Q497 48 463.0 20.5Q429 -7 429 -44Q429 -68 449.0 -85.0Q469 -102 493 -102Q520 -102 535.5 -87.5Q551 -73 551 -50Q551 -31 533 2Q551 38 581 38Q629 38 629 -14Q629 -63 587.0 -100.5Q545 -138 465 -138Z"
-    />
+    <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="8" />
+    <circle class="dot" cx="50" cy="50" r="9" fill="currentColor" />
   </svg>
 )
 
@@ -141,7 +139,7 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 }
 
 // Behaviour in the browser:
-//  · The menu opens on arrival (clicking the heart folds it; it turns upside down while folded); if a reader closes it, it stays closed
+//  · The menu opens on arrival (clicking the circumpunct folds it; its centre dot fades while folded); if a reader closes it, it stays closed
 //    as they move between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
 //    and the other groups fold. Any group can be opened or folded by clicking.

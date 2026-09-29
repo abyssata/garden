@@ -6,7 +6,7 @@
 //  Contents
 //   1. Fonts & colours
 //   2. Page & reading column
-//   3. Left panel: name, subtitle, search, the menu (❦)
+//   3. Left panel: name, subtitle, search, the menu (☉)
 //   4. Phones
 //   5. Writing: paragraphs, links, quotations, code, images, captions
 //   6. Headings
@@ -221,7 +221,7 @@ hr {
   }
 }
 
-// The menu: a floral heart that opens and closes the list of sections.
+// The menu: a circumpunct that opens and closes the list of sections.
 // Folding: the heading and its list sit in a two-row grid; the list's row
 // eases between its full height (1fr) and nothing (0fr), so it glides open
 // and shut at its true height.
@@ -231,8 +231,8 @@ hr {
   grid-template-rows: auto 1fr;
   transition: grid-template-rows $fold;
 
-  // The top of the menu: a floral heart (❦) between two hairlines. Clicking
-  // it folds the menu, and the heart turns upside down while folded.
+  // The top of the menu: a circumpunct (☉) between two hairlines. Clicking
+  // it folds the menu, and its centre dot fades while folded.
   .sections-toggle {
     display: flex;
     align-items: center;
@@ -255,10 +255,14 @@ hr {
     }
 
     .fleuron {
-      height: 1.2rem;
+      height: 1.05rem;
       width: auto;
       display: block;
-      transition: transform $fold, color 0.15s ease;
+      transition: color 0.15s ease;
+
+      .dot {
+        transition: opacity $fold;
+      }
     }
 
     &:hover {
@@ -436,8 +440,8 @@ hr {
       margin-bottom: 0;
     }
 
-    .sections-toggle .fleuron {
-      transform: rotate(180deg);
+    .sections-toggle .fleuron .dot {
+      opacity: 0;
     }
 
     > ul {
