@@ -20,15 +20,9 @@ const HEADING = "De Profundis"
 
 function Sections({ fileData, displayClass }: QuartzComponentProps) {
   const current = fileData.slug ?? ""
-  const inSection = SECTIONS.some(
-    ({ folder }) => current === `${folder}/index` || current.startsWith(`${folder}/`),
-  )
   return (
-    <nav
-      class={classNames(displayClass, "garden-sections", inSection ? "" : "collapsed")}
-      aria-label="Sections"
-    >
-      <button type="button" class="sections-toggle" aria-expanded={inSection ? "true" : "false"}>
+    <nav class={classNames(displayClass, "garden-sections")} aria-label="Sections">
+      <button type="button" class="sections-toggle" aria-expanded="true">
         <span>{HEADING}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -64,24 +58,30 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
   )
 }
 
-// Open/close on click. The visitor's choice is remembered while they browse.
+// Open on arrival; a click folds it away. If a reader closes it, it stays closed
+// as they move between pages during that visit. The current section is marked
+// again after every page change.
 Sections.afterDOMLoaded = `
 function setupGardenSections() {
+  const here = location.pathname.replace(/\\/index(\\.html)?$/, "/").replace(/\\/?$/, "/")
   for (const nav of document.querySelectorAll(".garden-sections")) {
     const btn = nav.querySelector(".sections-toggle")
     if (!btn) continue
-    let saved = null
-    try { saved = sessionStorage.getItem("garden-sections-open") } catch (e) {}
-    const hasActive = !!nav.querySelector("a.active")
-    if (saved !== null && !hasActive) {
-      const open = saved === "1"
-      nav.classList.toggle("collapsed", !open)
-      btn.setAttribute("aria-expanded", open ? "true" : "false")
+
+    for (const a of nav.querySelectorAll("ul a")) {
+      const target = new URL(a.getAttribute("href"), location.href).pathname.replace(/\\/?$/, "/")
+      a.classList.toggle("active", here === target || here.startsWith(target))
     }
+
+    let closed = false
+    try { closed = sessionStorage.getItem("garden-sections-closed") === "1" } catch (e) {}
+    nav.classList.toggle("collapsed", closed)
+    btn.setAttribute("aria-expanded", closed ? "false" : "true")
+
     btn.onclick = () => {
-      const open = nav.classList.toggle("collapsed") === false
-      btn.setAttribute("aria-expanded", open ? "true" : "false")
-      try { sessionStorage.setItem("garden-sections-open", open ? "1" : "0") } catch (e) {}
+      const nowClosed = nav.classList.toggle("collapsed")
+      btn.setAttribute("aria-expanded", nowClosed ? "false" : "true")
+      try { sessionStorage.setItem("garden-sections-closed", nowClosed ? "1" : "0") } catch (e) {}
     }
   }
 }

@@ -853,3 +853,57 @@ body[data-slug$="/index"] .content-meta {
     margin-bottom: 0.3rem;
   }
 }
+
+// ── Sections: links styled like ABYSSATA; the current one marked with a short line ──
+.garden-sections {
+  ul {
+    max-height: 40rem;
+  }
+
+  li {
+    margin: 0 0 0.45rem 0 !important;
+  }
+
+  ul a {
+    display: inline-block;
+    color: #444444 !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.05em !important;
+    border-bottom: 1px solid #d0d0d0 !important;
+    padding-bottom: 1px !important;
+    line-height: 1.3;
+
+    &:hover {
+      border-bottom-color: #444444 !important;
+    }
+
+    &.active {
+      color: #111111 !important;
+      border-bottom-color: #444444 !important;
+    }
+
+    &.active::before {
+      content: "";
+      display: inline-block;
+      width: 0.9em;
+      border-top: 1.5px solid currentColor;
+      margin-right: 0.45em;
+      vertical-align: middle;
+      transform: translateY(-0.1em);
+    }
+  }
+
+  // "De Profundis": a touch larger, in the title's grey
+  .sections-toggle {
+    color: #444444;
+
+    span {
+      font-size: 0.86rem;
+      letter-spacing: 0.06em;
+    }
+
+    &:hover {
+      color: #111111;
+    }
+  }
+}
