@@ -789,3 +789,67 @@ body[data-slug$="/index"] .content-meta {
     }
   }
 }
+
+// "De Profundis": the heading that opens and closes the sections list
+.garden-sections {
+  .sections-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 0.6rem 0;
+    cursor: pointer;
+    color: #8a8a8a;
+
+    span {
+      font-family: $serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .fold {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      color: #444444;
+    }
+  }
+
+  ul {
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+    max-height: 30rem;
+    opacity: 1;
+  }
+
+  &.collapsed {
+    .sections-toggle {
+      margin-bottom: 0;
+    }
+
+    .fold {
+      transform: rotate(-90deg);
+    }
+
+    ul {
+      max-height: 0;
+      opacity: 0;
+    }
+  }
+}
+
+@media #{$mobile} {
+  .left.sidebar .garden-sections .sections-toggle {
+    width: auto;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+}
