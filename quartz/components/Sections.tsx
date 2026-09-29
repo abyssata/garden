@@ -9,13 +9,12 @@ const PROLOGUE = "Prologue"
 // Each entry: the folder name in the vault, and the title shown on the site.
 // To rename a section, change its title here and in the folder's index.md.
 const SECTIONS: { folder: string; title: string }[] = [
-  { folder: "psyche", title: "De Anima" },
-  { folder: "alchemy", title: "De Alchymia" },
-  { folder: "mysteries", title: "De Mysteriis" },
-  { folder: "being", title: "De Ente" },
-  { folder: "gothic", title: "De Ruinis" },
-  { folder: "beauty", title: "De Forma" },
-  { folder: "creation", title: "De Creatione" },
+  { folder: "psyche", title: "Psyche" },
+  { folder: "mysteries", title: "Mysteries" },
+  { folder: "being", title: "Being" },
+  { folder: "gothic", title: "Gothic" },
+  { folder: "form", title: "Form" },
+  { folder: "creation", title: "Creation" },
 ]
 
 // Heading for the list; click it to open or close the sections.

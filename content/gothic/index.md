@@ -1,7 +1,7 @@
 ---
-title: De Ruinis
-description: On ruins and the gothic.
+title: Gothic
+description: On ruins, darkness and the sacred-strange.
 ---
-<p class="gloss">on ruins and the gothic</p>
+<p class="gloss">on ruins, darkness and the sacred-strange</p>
 
 %% A few lines introducing this section can go here — or leave it empty and let the notes speak. Anything between these percent signs stays hidden on the site. %%

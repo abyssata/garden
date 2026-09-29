@@ -1,7 +1,7 @@
 ---
-title: De Alchymia
-description: On alchemy and the work of transformation.
+title: Form
+description: On beauty, shape and adornment.
 ---
-<p class="gloss">on alchemy and the work of transformation</p>
+<p class="gloss">on beauty, shape and adornment</p>
 
 %% A few lines introducing this section can go here — or leave it empty and let the notes speak. Anything between these percent signs stays hidden on the site. %%
