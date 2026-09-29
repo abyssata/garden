@@ -1,519 +1,51 @@
 @use "./variables.scss" as *;
 
-// ── The Garden: simple, greyscale, Times ──────────────────────────
-// Modelled on a quiet single-column journal: white page, near-black
-// Times, small uppercase headings, links without underlines.
+// ════════════════════════════════════════════════════════════════════
+//  VIRIDITAS · the garden's stylesheet
+//
+//  Contents
+//   1. Fonts & colours
+//   2. Page & reading column
+//   3. Left panel: name, subtitle, search, De Profundis
+//   4. Phones
+//   5. Writing: paragraphs, links, quotations, code, images, captions
+//   6. Headings
+//   7. Section pages & listings
+//   8. Backlinks, search results, previews, footer
+//
+//  Colours used throughout
+//   #111111  darkest: hover and the current section
+//   #444444  headings, links, the site name
+//   #4a4a4a  body text
+//   #767676  quiet text: subtitle, dates, captions, glosses
+//   #d0d0d0  faint lines under links
+//   #e4e4e4  hairlines and borders
+// ════════════════════════════════════════════════════════════════════
 
 $serif: "Times New Roman", Times, serif;
-
-html {
-  color-scheme: light;
-}
-
-body {
-  background: #ffffff;
-  font-family: $serif;
-  font-size: 1.0625rem;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-// Reading column: kept narrow between the side panels
-#quartz-body .center {
-  min-width: 0 !important;
-  max-width: 660px !important;
-  width: 100%;
-  box-sizing: border-box;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-// Left panel: site name, then search
-.page-title {
-  display: block !important;
-  margin: 0 0 0.5rem 0 !important;
-  font-family: $serif;
-  font-size: 1.1rem !important;
-  font-weight: bold !important;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  line-height: 1.25;
-
-  a {
-    color: #111111 !important;
-    font-weight: bold !important;
-  }
-}
-
-.search .search-button {
-  background: #ffffff !important;
-  border: 1px solid #e4e4e4 !important;
-  border-radius: 4px !important;
-  font-family: $serif;
-
-  p {
-    font-size: 0.85rem;
-    color: #8a8a8a;
-  }
-
-  svg {
-    stroke: #8a8a8a;
-  }
-}
-
-// Right panel: table of contents
-.toc {
-  font-family: $serif;
-
-  button h3,
-  .toc-header h3 {
-    font-size: 0.75rem !important;
-    letter-spacing: 0.05em;
-    color: #8a8a8a !important;
-  }
-
-  ul a,
-  a {
-    border-bottom: none !important;
-    font-size: 0.9rem;
-    color: #555555 !important;
-
-    &:hover,
-    &.in-view {
-      color: #111111 !important;
-    }
-  }
-}
-
-// Page titles and headings: small, uppercase
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.article-title {
-  font-family: $serif !important;
-  font-size: 1.1rem !important;
-  font-weight: bold;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  text-transform: uppercase;
-  color: #111111;
-}
-
-.article-title {
-  margin: 0 0 0.25rem 0 !important;
-}
-
-// Hide the Obsidian "Properties" box
-.note-properties,
-.metadata-container {
-  display: none !important;
-}
-
-.content-meta {
-  font-size: 0.8125rem;
-  letter-spacing: 0.03em;
-  color: #8a8a8a !important;
-  margin-top: 0 !important;
-}
-
-// Links: no underline, a faint rule on hover
-a,
-a.internal,
-a.external {
-  color: #444444 !important;
-  background-color: transparent !important;
-  font-weight: normal;
-  text-decoration: none;
-  border-bottom: 1px solid #d0d0d0;
-  padding: 0 0 1px 0 !important;
-  border-radius: 0 !important;
-  transition: border-color 0.15s ease;
-
-  &:hover {
-    border-bottom-color: #444444;
-  }
-}
-
-.page-title a,
-a[role="anchor"],
-.search-button {
-  border-bottom: none !important;
-}
-
-.tag-link::before {
-  content: "#";
-  color: #8a8a8a;
-}
-
-// Quotations: a thin rule, italic
-blockquote {
-  border-left: 1px solid #e4e4e4 !important;
-  background: none !important;
-  margin-left: 0 !important;
-  padding: 2px 0 2px 1rem !important;
-  font-style: italic;
-  opacity: 0.85;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #e4e4e4;
-  background: none;
-  height: 0;
-}
-
-// Code
-pre,
-code {
-  font-size: 0.875em;
-  background: #f2f2f2 !important;
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
-}
-
-code {
-  padding: 0.1em 0.35em;
-}
-
-pre code {
-  border: none;
-  padding: 0;
-}
-
-article img {
-  border-radius: 4px;
-}
-
-// Backlinks at the foot of the page
-.backlinks {
-  margin-top: 2.5rem;
-
-  h3 {
-    font-size: 0.75rem !important;
-    letter-spacing: 0.05em;
-    color: #8a8a8a;
-  }
-
-  ul {
-    padding-left: 0;
-    list-style: none;
-  }
-}
-
-// Folder and tag listings
-.page-listing,
-ul.section-ul {
-  .section {
-    border-bottom: 1px solid #e4e4e4;
-  }
-}
-
-footer {
-  max-width: 660px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  border-top: 1px solid #e4e4e4;
-  margin-top: 1rem !important;
-  padding: 1.25rem 1.25rem 2rem !important;
-  font-size: 0.8125rem;
-  opacity: 0.6;
-  text-align: left;
-}
-
-// Keep the header out of hover and search previews
-.popover,
-.preview-container {
-  .page-title,
-  .search {
-    display: none !important;
-  }
-}
-
-// Phones: site name on the left, search on the right
-@media #{$mobile} {
-  #quartz-body .left.sidebar {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 1rem !important;
-    padding: 1rem 1.5rem 1.25rem !important;
-  }
-
-  .left.sidebar .page-title {
-    margin: 0 !important;
-    white-space: nowrap;
-  }
-
-  .left.sidebar .search {
-    flex: 0 1 9rem !important;
-  }
-
-  .left.sidebar .toc {
-    display: none !important;
-  }
-}
-
-// Table of contents sits under search in the left panel
-.left.sidebar .toc {
-  margin-top: 1.5rem;
-}
-
-// Left panel: title, search and contents share one column width
-@media #{$desktop}, #{$tablet} {
-  .left.sidebar {
-    .page-title,
-    .search,
-    .toc {
-      width: 12rem !important;
-      max-width: 12rem !important;
-      box-sizing: border-box;
-    }
-
-    .page-title {
-      font-size: 1.6rem !important;
-      line-height: 1 !important;
-      white-space: nowrap;
-      margin-bottom: 0.4rem !important;
-    }
-
-    .site-subtitle {
-      margin: -1rem 0 0.4rem 0 !important;
-      width: 12rem;
-    }
-
-    .search {
-      margin: 0.4rem 0 0.4rem 0 !important;
-    }
-
-    .search .search-button {
-      width: 100% !important;
-      box-sizing: border-box;
-    }
-
-    .toc {
-      margin-top: 0.75rem;
-
-      .toc-header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-      }
-    }
-  }
-}
-
-// "A digital garden by ABYSSATA."
-.site-subtitle {
-  font-family: $serif;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: #8a8a8a;
-  margin: 0;
-
-  a {
-    color: #444444 !important;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-
-    &:hover {
-      color: #111111 !important;
-    }
-  }
-}
-
-@media #{$mobile} {
-  #quartz-body .left.sidebar {
-    flex-wrap: wrap !important;
-    row-gap: 0.25rem !important;
-  }
-
-  .left.sidebar .site-subtitle {
-    order: 3;
-    flex-basis: 100%;
-  }
-}
-
-.popover .site-subtitle,
-.preview-container .site-subtitle {
-  display: none !important;
-}
-
-// Backlinks in capitals
-.backlinks ul li a {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-}
-
-// Home page only: an image at the foot of the note sits centred, with room above.
-// It stays well inside the text column; add a width in Obsidian (![[file.png|200]]) to make it smaller.
-body[data-slug="index"] #quartz-body .center article img {
-  display: block;
-  margin: 3rem auto 0;
-  max-width: 80% !important;
-  height: auto;
-  border-radius: 0;
-}
-
-// All links: bold capitals (slightly smaller so they sit evenly in a line of text)
-article a.internal:not([role="anchor"]):not(.tag-link),
-article a.external,
-.site-subtitle a,
-.backlinks ul li a,
-footer a {
-  font-weight: bold !important;
-  text-transform: uppercase;
-  font-size: 0.88em !important;
-  letter-spacing: 0.03em;
-}
-
-// Table of contents entries and search result titles match the links
-.left.sidebar .toc ul a,
-.search .results-container .result-card > h3 {
-  font-family: $serif !important;
-  font-weight: bold !important;
-  text-transform: uppercase;
-  font-size: 0.8rem !important;
-  letter-spacing: 0.03em;
-}
-
-.search .results-container .result-card > h3 {
-  color: #111111 !important;
-}
-
-.search .results-container .result-card:hover,
-.search .results-container .result-card.focus {
-  background: #f5f5f5 !important;
-}
-
-.search .results-container .result-card {
-  padding: 0.9em 1em !important;
-  border-bottom: 1px solid #e4e4e4 !important;
-}
-
-// Images anywhere never extend past the text column
-article img,
-article video,
-article iframe {
-  max-width: 100% !important;
-  height: auto;
-  box-sizing: border-box;
-}
-
-
-// A hairline closing the contents column
-.left.sidebar .toc::after {
-  content: "";
-  display: block;
-  width: 100%;
-  border-top: 1px solid #d6d6d6;
-  margin-top: 1.2rem;
-}
-
-// Site name: Gelasio (a Georgia-style serif stored in the garden, so it looks
-// identical on every device), lowercase italic, soft grey.
-@font-face {
-  font-family: "Gelasio";
-  src: url("static/fonts/gelasio-latin-400-italic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-.left.sidebar .page-title,
-.left.sidebar .page-title a {
-  font-family: "Gelasio", Georgia, serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  text-transform: lowercase !important;
-  letter-spacing: 0 !important;
-  color: #444444 !important;
-}
-
-// The long dash after the name is drawn as a line, so it's the same everywhere
-// and always ends in line with the end of the subtitle.
-.left.sidebar .page-title a {
-  display: inline-flex !important;
-  align-items: center;
-}
-
-.left.sidebar .page-title a::after {
-  content: "";
-  flex: 1 1 auto;
-  min-width: 1.2em;
-  border-top: 2px solid currentColor;
-  margin-left: 0.04em;
-  transform: translateY(0.08em);
-}
-
-@media #{$desktop}, #{$tablet} {
-  .left.sidebar .page-title {
-    font-size: 1.85rem !important;
-    margin-bottom: 0.55rem !important;
-  }
-
-  .left.sidebar .page-title a {
-    width: 11rem;
-  }
-}
-
-@media #{$mobile} {
-  .left.sidebar .page-title a::after {
-    min-width: 2.2em;
-  }
-}
-
-// Text selection: a soft light grey
-::selection {
-  background: #efefef;
-  color: #111111;
-}
-::-moz-selection {
-  background: #efefef;
-  color: #111111;
-}
-
-// Post text: a touch smaller than the default
-#quartz-body .center article {
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-// Page titles and headings everywhere: same soft grey as the site name
-.article-title,
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6,
-.popover h1,
-.search .results-container .result-card > h3 {
-  color: #444444 !important;
-}
-
-// Body text a shade softer than black
-:root {
-  --darkgray: #4a4a4a !important;
-}
-
-body,
-article {
-  color: #4a4a4a;
-}
-
-// ── Reading text in Gelasio; labels (links, headings, side panel) stay in Times ──
+$gelasio: "Gelasio", Georgia, serif;
+
+$ink-dark: #111111;
+$ink: #444444;
+$body-ink: #4a4a4a;
+$quiet: #767676;
+$line: #d0d0d0;
+$hairline: #e4e4e4;
+
+// ── 1. Fonts & colours ──────────────────────────────────────────────
+// Gelasio: a Georgia-style serif stored in the garden (quartz/static/fonts),
+// so the name and reading text look the same on every device.
 @font-face {
   font-family: "Gelasio";
   src: url("static/fonts/gelasio-latin-400-normal.woff2") format("woff2");
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gelasio";
+  src: url("static/fonts/gelasio-latin-400-italic.woff2") format("woff2");
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
 }
@@ -532,16 +64,453 @@ article {
   font-display: swap;
 }
 
+:root {
+  --darkgray: #{$body-ink} !important;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: #ffffff;
+  color: $body-ink;
+  font-family: $serif;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #efefef;
+  color: $ink-dark;
+}
+::-moz-selection {
+  background: #efefef;
+  color: $ink-dark;
+}
+
+// ── 2. Page & reading column ────────────────────────────────────────
+#quartz-body .center {
+  min-width: 0 !important;
+  max-width: 660px !important;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// The Obsidian "Properties" box stays hidden
+.note-properties,
+.metadata-container {
+  display: none !important;
+}
+
+// Date and reading time under a note's title
+.content-meta {
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+  color: $quiet !important;
+  margin-top: 0 !important;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $hairline;
+  background: none;
+  height: 0;
+}
+
+// ── 3. Left panel ───────────────────────────────────────────────────
+// Name, subtitle, search and De Profundis share one 12rem column.
+
+// Site name: "viriditas⸺" in lowercase Gelasio italic, soft grey.
+// The dash is drawn as a line so it always ends in line with the subtitle.
+.page-title {
+  display: block !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.25;
+}
+
+.left.sidebar .page-title,
+.left.sidebar .page-title a {
+  font-family: $gelasio !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  text-transform: lowercase !important;
+  letter-spacing: 0 !important;
+  color: $ink !important;
+}
+
+.left.sidebar .page-title {
+  font-size: 1.1rem !important;
+}
+
+.left.sidebar .page-title a {
+  display: inline-flex !important;
+  align-items: center;
+  border-bottom: none !important;
+}
+
+.left.sidebar .page-title a::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 1.2em;
+  border-top: 2px solid currentColor;
+  margin-left: 0.04em;
+  transform: translateY(0.08em);
+}
+
+// "A digital garden by ABYSSATA."
+.site-subtitle {
+  font-family: $serif;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: $quiet;
+  margin: 0;
+
+  a {
+    color: $ink !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+
+    &:hover {
+      color: $ink-dark !important;
+    }
+  }
+}
+
+// Search: a single line beneath an italic "search"
+.search .search-button {
+  background: none !important;
+  border: none !important;
+  border-bottom: 1px solid $line !important;
+  border-radius: 0 !important;
+  padding: 0 0 0.35rem 0 !important;
+  height: auto !important;
+  line-height: 1.3;
+  font-family: $serif;
+  gap: 0.45rem;
+
+  p {
+    margin: 0;
+    font-family: $gelasio;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-transform: lowercase;
+    color: $quiet;
+  }
+
+  svg {
+    margin: 0 !important;
+    width: 13px !important;
+    min-width: 13px !important;
+    height: 13px;
+
+    .search-path {
+      stroke: $quiet !important;
+    }
+  }
+
+  &:hover {
+    border-bottom-color: $ink !important;
+  }
+}
+
+// De Profundis: a heading that opens and closes the list of sections
+.garden-sections {
+  margin: 1.1rem 0 0 0;
+
+  .sections-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0 0 0.45rem 0;
+    border-bottom: 1px solid $hairline;
+    margin: 0 0 0.75rem 0;
+    cursor: pointer;
+    color: $ink;
+
+    span {
+      font-family: $serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      letter-spacing: 0.06em;
+    }
+
+    .fold {
+      width: 16px;
+      height: 16px;
+      color: $quiet;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      color: $ink-dark;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    overflow: hidden;
+    max-height: 40rem;
+    opacity: 1;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  li {
+    margin: 0 0 0.4rem 0;
+    line-height: 1.4;
+  }
+
+  // The sections themselves: lowercase italic, underlined only on hover
+  // and for the section you're in, which also gets a short dash.
+  ul a {
+    display: inline-block;
+    font-family: $gelasio !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    text-transform: lowercase !important;
+    letter-spacing: 0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.35 !important;
+    color: $ink !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    text-decoration: underline !important;
+    text-decoration-color: transparent !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease;
+
+    &:hover {
+      text-decoration-color: $line !important;
+    }
+
+    &.active {
+      color: $ink-dark !important;
+      text-decoration-color: $ink !important;
+    }
+
+    &.active::before {
+      content: "";
+      display: inline-block;
+      width: 0.9em;
+      border-top: 1.5px solid currentColor;
+      margin-right: 0.45em;
+      vertical-align: middle;
+      transform: translateY(-0.1em);
+    }
+  }
+
+  &.collapsed {
+    .sections-toggle {
+      margin-bottom: 0;
+    }
+
+    .fold {
+      transform: rotate(-90deg);
+    }
+
+    ul {
+      max-height: 0;
+      opacity: 0;
+    }
+  }
+}
+
+// Desktop and tablet: the shared column
+@media #{$desktop}, #{$tablet} {
+  .left.sidebar {
+    .page-title,
+    .search {
+      width: 12rem !important;
+      max-width: 12rem !important;
+      box-sizing: border-box;
+    }
+
+    .page-title {
+      font-size: 1.85rem !important;
+      line-height: 1 !important;
+      white-space: nowrap;
+      margin-bottom: 0.55rem !important;
+    }
+
+    .page-title a {
+      width: 11rem;
+    }
+
+    .site-subtitle {
+      margin: -1rem 0 0.4rem 0 !important;
+      width: 12rem;
+    }
+
+    .search {
+      margin: 0.4rem 0 0.4rem 0 !important;
+    }
+
+    .search .search-button {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    .garden-sections {
+      width: 12rem;
+    }
+  }
+}
+
+// Nothing from the left panel inside hover and search previews
+.popover,
+.preview-container {
+  .page-title,
+  .search,
+  .site-subtitle,
+  .garden-sections {
+    display: none !important;
+  }
+}
+
+// ── 4. Phones ───────────────────────────────────────────────────────
+// Name and search side by side; subtitle and sections on their own lines.
+@media #{$mobile} {
+  #quartz-body .left.sidebar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    row-gap: 0.25rem !important;
+    padding: 1rem 1.5rem 1.25rem !important;
+  }
+
+  .left.sidebar .page-title {
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+
+  .left.sidebar .page-title a::after {
+    min-width: 2.2em;
+  }
+
+  .left.sidebar .search {
+    flex: 0 1 9rem !important;
+  }
+
+  .left.sidebar .site-subtitle {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .left.sidebar .garden-sections {
+    order: 4;
+    flex-basis: 100%;
+    margin: 0.4rem 0 0 0;
+
+    .sections-toggle {
+      width: auto;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.9rem;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    ul a {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  // Ragged right edge on narrow screens (justified text opens large gaps)
+  article p,
+  article blockquote p {
+    text-align: left;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+}
+
+// ── 5. Writing ──────────────────────────────────────────────────────
+#quartz-body .center article {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+// Reading text in Gelasio, justified with hyphenation
 article p,
 article li,
 article blockquote,
 article td,
 .popover article p,
 .preview-container p {
-  font-family: "Gelasio", Georgia, serif;
+  font-family: $gelasio;
   font-size: 0.95rem;
 }
 
+article p,
+article blockquote p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+
+// Links: soft grey with a faint line beneath that darkens on hover
+a,
+a.internal,
+a.external {
+  color: $ink !important;
+  background-color: transparent !important;
+  font-weight: normal;
+  text-decoration: none;
+  border-bottom: 1px solid $line;
+  padding: 0 0 1px 0 !important;
+  border-radius: 0 !important;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-bottom-color: $ink;
+  }
+}
+
+a[role="anchor"] {
+  border-bottom: none !important;
+}
+
+.tag-link::before {
+  content: "#";
+  color: $quiet;
+}
+
+// Links in writing, the subtitle, backlinks and footer: bold Times capitals
+article a.internal:not([role="anchor"]):not(.tag-link),
+article a.external,
+.site-subtitle a,
+.backlinks ul li a,
+footer a {
+  font-weight: bold !important;
+  text-transform: uppercase;
+  font-size: 0.88em !important;
+  letter-spacing: 0.03em;
+}
+
+// …inside paragraphs they stay in Times beside the Gelasio text
 body article p a.internal:not([role="anchor"]):not(.tag-link),
 body article p a.external,
 body article li a.internal:not([role="anchor"]):not(.tag-link),
@@ -554,88 +523,62 @@ body article td a.external {
   font-size: 0.95em !important;
 }
 
-// ── Headings: small, bold, letterspaced capitals, like the links ──
-.article-title,
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
-  font-family: $serif !important;
-  font-weight: bold !important;
-  font-style: normal !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.09em !important;
-  font-size: 0.92rem !important;
+// Quotations: a thin rule, italic
+blockquote {
+  border-left: 1px solid $hairline !important;
+  background: none !important;
+  margin-left: 0 !important;
+  padding: 2px 0 2px 1rem !important;
+  font-style: italic;
+  opacity: 0.85;
 }
 
-.article-title {
-  font-size: 1rem !important;
+// Code
+pre,
+code {
+  font-size: 0.875em;
+  background: #f2f2f2 !important;
+  border: 1px solid $hairline;
+  border-radius: 4px;
 }
 
-article h3,
-article h4,
-article h5,
-article h6 {
-  font-size: 0.85rem !important;
+code {
+  padding: 0.1em 0.35em;
 }
 
-// Side panel contents echo the heading spacing
-.left.sidebar .toc ul a {
-  letter-spacing: 0.07em !important;
+pre code {
+  border: none;
+  padding: 0;
 }
 
-// Justified paragraphs, with hyphenation so the spacing between words stays even.
-// Phones keep a ragged right edge: on a narrow screen justified text opens up large gaps.
-article p,
-article blockquote p {
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphenate-limit-chars: 7 3 3;
+// Images never extend past the text column
+article img,
+article video,
+article iframe {
+  max-width: 100% !important;
+  height: auto;
+  box-sizing: border-box;
 }
 
-@media #{$mobile} {
-  article p,
-  article blockquote p {
-    text-align: left;
-    hyphens: manual;
-    -webkit-hyphens: manual;
-  }
+article img {
+  border-radius: 4px;
 }
 
-// ── Heading scale: every level in capitals, each with its own voice ──
-body article h1 { font-size: 1.05rem !important; }
-body article h2 { font-size: 0.92rem !important; }
-body article h3 {
-  font-size: 0.82rem !important;
-  color: #666666 !important;
-}
-body article h4 {
-  font-family: "Gelasio", Georgia, serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.06em !important;
-  font-size: 0.95rem !important;
-  color: #444444 !important;
-}
-body article h5 {
-  font-family: "Gelasio", Georgia, serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.06em !important;
-  font-size: 0.82rem !important;
-  color: #777777 !important;
-}
-body article h6 {
-  font-weight: 400 !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.14em !important;
-  color: #8a8a8a !important;
+// Home page: an image at the foot of the note sits centred, with room above.
+// Add a width in Obsidian (![[file.png|200]]) to make it smaller.
+body[data-slug="index"] #quartz-body .center article img {
+  display: block;
+  margin: 3rem auto 0;
+  max-width: 80% !important;
+  height: auto;
+  border-radius: 0;
 }
 
-// Heading 4 directly beneath an image becomes a caption: small, centred capitals
+// A heading 4 directly beneath an image becomes its caption
+body article p:has(> img) {
+  margin-bottom: 0 !important;
+}
+
 body article p:has(> img) + h4,
 body article p:has(> a > img) + h4 {
   text-align: center;
@@ -644,7 +587,7 @@ body article p:has(> a > img) + h4 {
   font-weight: 400 !important;
   font-size: 0.62rem !important;
   letter-spacing: 0.09em !important;
-  color: #8a8a8a !important;
+  color: $quiet !important;
   margin-top: 0.35rem !important;
   margin-bottom: 1.8rem !important;
   line-height: 1.5;
@@ -655,86 +598,93 @@ body article p:has(> a > img) + h4 a[role="anchor"] {
   display: none;
 }
 
-body article p:has(> img) {
-  margin-bottom: 0 !important;
+// ── 6. Headings ─────────────────────────────────────────────────────
+// Base for every heading on the site
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.article-title {
+  font-family: $serif !important;
+  font-size: 1.1rem !important;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: $ink-dark;
 }
 
-// ── Sections list in the left panel (De Anima, De Alchymia, …) ──
-.garden-sections {
-  margin: 1.1rem 0 0 0;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin: 0 0 0.35rem 0;
-    line-height: 1.4;
-  }
-
-  a {
-    font-family: $serif !important;
-    font-weight: bold !important;
-    text-transform: uppercase;
-    font-size: 0.8rem !important;
-    letter-spacing: 0.07em;
-    color: #8a8a8a !important;
-    border-bottom: none !important;
-
-    &:hover,
-    &.active {
-      color: #444444 !important;
-    }
-  }
+// Note titles and headings in writing: small, bold, letterspaced capitals
+.article-title,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  font-weight: bold !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  color: $ink !important;
 }
 
-@media #{$desktop}, #{$tablet} {
-  .left.sidebar .garden-sections {
-    width: 12rem;
-  }
+.article-title {
+  font-size: 1rem !important;
+  margin: 0 0 0.25rem 0 !important;
 }
 
-// Phones: sections run across in a single wrapped line beneath the subtitle
-@media #{$mobile} {
-  .left.sidebar .garden-sections {
-    order: 4;
-    flex-basis: 100%;
-    margin: 0.4rem 0 0 0;
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.2rem 0.9rem;
-    }
-
-    li {
-      margin: 0;
-    }
-
-    a {
-      font-size: 0.68rem !important;
-    }
-  }
+// The scale: each level with its own voice
+body article h1 {
+  font-size: 1.05rem !important;
 }
 
-.popover .garden-sections,
-.preview-container .garden-sections {
-  display: none !important;
+body article h2 {
+  font-size: 0.92rem !important;
 }
 
+body article h3 {
+  font-size: 0.82rem !important;
+  color: #666666 !important;
+}
+
+body article h4 {
+  font-family: $gelasio !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.95rem !important;
+}
+
+body article h5 {
+  font-family: $gelasio !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.82rem !important;
+  color: #777777 !important;
+}
+
+body article h6 {
+  font-weight: 400 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.14em !important;
+  color: $quiet !important;
+}
+
+// ── 7. Section pages & listings ─────────────────────────────────────
 // The English gloss beneath a section's Latin title
 article p.gloss {
-  font-family: "Gelasio", Georgia, serif !important;
+  font-family: $gelasio !important;
   font-style: italic;
   text-align: left !important;
-  color: #8a8a8a;
+  color: $quiet;
   font-size: 0.95rem;
   margin-top: -0.4rem;
 }
 
-// ── Section (folder) pages ──
 // No date or reading time under a section's title
 body[data-slug$="/index"] .content-meta {
   display: none !important;
@@ -771,7 +721,7 @@ body[data-slug$="/index"] .content-meta {
       font-family: $serif;
       font-size: 0.75rem;
       letter-spacing: 0.04em;
-      color: #8a8a8a;
+      color: $quiet;
     }
 
     .desc h3 {
@@ -790,120 +740,60 @@ body[data-slug$="/index"] .content-meta {
   }
 }
 
-// "De Profundis": the heading that opens and closes the sections list
-.garden-sections {
-  .sections-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0 0 0.6rem 0;
-    cursor: pointer;
-    color: #8a8a8a;
+// ── 8. Backlinks, search results, previews, footer ──────────────────
+.backlinks {
+  margin-top: 2.5rem;
 
-    span {
-      font-family: $serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-
-    .fold {
-      width: 18px;
-      height: 18px;
-      transition: transform 0.2s ease;
-    }
-
-    &:hover {
-      color: #444444;
-    }
+  h3 {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em;
+    color: $quiet;
   }
 
   ul {
-    overflow: hidden;
-    transition: max-height 0.25s ease, opacity 0.2s ease;
-    max-height: 30rem;
-    opacity: 1;
+    padding-left: 0;
+    list-style: none;
   }
 
-  &.collapsed {
-    .sections-toggle {
-      margin-bottom: 0;
-    }
-
-    .fold {
-      transform: rotate(-90deg);
-    }
-
-    ul {
-      max-height: 0;
-      opacity: 0;
-    }
+  ul li a {
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
   }
 }
 
-@media #{$mobile} {
-  .left.sidebar .garden-sections .sections-toggle {
-    width: auto;
-    gap: 0.4rem;
-    margin-bottom: 0.3rem;
+.search .results-container {
+  .result-card {
+    padding: 0.9em 1em !important;
+    border-bottom: 1px solid $hairline !important;
+
+    &:hover,
+    &.focus {
+      background: #f5f5f5 !important;
+    }
+  }
+
+  .result-card > h3 {
+    font-family: $serif !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.03em;
+    color: $ink !important;
   }
 }
 
-// ── Sections: links styled like ABYSSATA; the current one marked with a short line ──
-.garden-sections {
-  ul {
-    max-height: 40rem;
-  }
+.popover h1 {
+  color: $ink !important;
+}
 
-  li {
-    margin: 0 0 0.45rem 0 !important;
-  }
-
-  ul a {
-    display: inline-block;
-    color: #444444 !important;
-    font-size: 0.78rem !important;
-    letter-spacing: 0.05em !important;
-    border-bottom: 1px solid #d0d0d0 !important;
-    padding-bottom: 1px !important;
-    line-height: 1.3;
-
-    &:hover {
-      border-bottom-color: #444444 !important;
-    }
-
-    &.active {
-      color: #111111 !important;
-      border-bottom-color: #444444 !important;
-    }
-
-    &.active::before {
-      content: "";
-      display: inline-block;
-      width: 0.9em;
-      border-top: 1.5px solid currentColor;
-      margin-right: 0.45em;
-      vertical-align: middle;
-      transform: translateY(-0.1em);
-    }
-  }
-
-  // "De Profundis": a touch larger, in the title's grey
-  .sections-toggle {
-    color: #444444;
-
-    span {
-      font-size: 0.86rem;
-      letter-spacing: 0.06em;
-    }
-
-    &:hover {
-      color: #111111;
-    }
-  }
+footer {
+  max-width: 660px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-top: 1px solid $hairline;
+  margin-top: 1rem !important;
+  padding: 1.25rem 1.25rem 2rem !important;
+  font-size: 0.8125rem;
+  opacity: 0.6;
+  text-align: left;
 }
