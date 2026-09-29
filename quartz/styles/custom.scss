@@ -128,8 +128,8 @@ hr {
 // ── 3. Left panel ───────────────────────────────────────────────────
 // Name, subtitle, search and the menu share one 12rem column.
 
-// Site name: "viriditas⸺" in lowercase Gelasio italic, soft grey.
-// The dash is drawn as a line so it always ends in line with the subtitle.
+// Site name: "EPINOIA" in widely spaced capitals, like THRESHOLD, with a
+// hairline running to the column's edge, in line with the subtitle's end.
 .page-title {
   display: block !important;
   margin: 0 0 0.5rem 0 !important;
@@ -138,11 +138,11 @@ hr {
 
 .left.sidebar .page-title,
 .left.sidebar .page-title a {
-  font-family: $gelasio !important;
-  font-style: italic !important;
+  font-family: $serif !important;
+  font-style: normal !important;
   font-weight: 400 !important;
-  text-transform: lowercase !important;
-  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
   color: $ink !important;
 }
 
@@ -160,9 +160,8 @@ hr {
   content: "";
   flex: 1 1 auto;
   min-width: 1.2em;
-  border-top: 2px solid currentColor;
-  margin-left: 0.04em;
-  transform: translateY(0.08em);
+  border-top: 1px solid #d6d6d6;
+  margin-left: 0.2em;
 }
 
 // "A digital garden by ABYSSATA."
@@ -456,19 +455,22 @@ hr {
     }
 
     .page-title {
-      font-size: 1.85rem !important;
+      font-size: 1.35rem !important;
       line-height: 1 !important;
       white-space: nowrap;
       margin-bottom: 0.55rem !important;
     }
 
     .page-title a {
-      width: 11rem;
+      width: 12rem;
     }
 
+    // Justified so it spans exactly the width of the name and its line
     .site-subtitle {
       margin: -1.15rem 0 1.6rem 0 !important;
       width: 12rem;
+      text-align: justify;
+      text-align-last: justify;
     }
 
     .search {
