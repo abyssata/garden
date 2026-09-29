@@ -1,5 +1,5 @@
 ---
-title: EPINOIA
+title: TEMENOS
 ---
 
 >Under construction, please stay tuned. ♡
