@@ -231,8 +231,8 @@ hr {
   grid-template-rows: auto 1fr;
   transition: grid-template-rows $fold;
 
-  // The top of the menu: a circumpunct (☉) between two hairlines. Clicking
-  // it folds the menu, and its centre dot fades while folded.
+  // The top of the menu: a circle between two hairlines. Open, the circle
+  // is empty; folded, its centre point appears (☉). Clicking it folds/opens.
   .sections-toggle {
     display: flex;
     align-items: center;
@@ -262,7 +262,9 @@ hr {
       overflow: visible;
       transition: color 0.15s ease;
 
+      // empty circle while the menu is open…
       .dot {
+        opacity: 0;
         transition: opacity $fold;
       }
     }
@@ -442,8 +444,9 @@ hr {
       margin-bottom: 0;
     }
 
+    // …and the centre point returns while it's folded
     .sections-toggle .fleuron .dot {
-      opacity: 0;
+      opacity: 1;
     }
 
     > ul {

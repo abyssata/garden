@@ -141,7 +141,7 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 }
 
 // Behaviour in the browser:
-//  · The menu opens on arrival (clicking the circumpunct folds it; its centre dot fades while folded); if a reader closes it, it stays closed
+//  · The menu opens on arrival (clicking the circle folds it; the centre point shows only while folded); if a reader closes it, it stays closed
 //    as they move between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
 //    and the other groups fold. Any group can be opened or folded by clicking.
