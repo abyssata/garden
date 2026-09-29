@@ -303,7 +303,8 @@ hr {
     &::before {
       content: "\2014";
       display: inline-block;
-      margin-right: 0.2em;
+      margin-left: -0.6em;
+      margin-right: 0.8em;
       font-style: normal;
       color: #b5b5b5;
       text-decoration: none;
@@ -448,6 +449,12 @@ hr {
     // no stepping forward in the wrapped row
     ul a.active {
       transform: none;
+    }
+
+    // dashes sit snug in the wrapped row
+    ul a::before {
+      margin-left: 0;
+      margin-right: 0.3em;
     }
   }
 
