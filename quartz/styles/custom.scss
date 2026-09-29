@@ -27,6 +27,7 @@ $heading-grey: #4c4c4c; // the menu's group names (Threshold, Interiority)
 $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
 $serif: "Times New Roman", Times, serif;
 $spectral: "Spectral", Georgia, serif;
+$caps: "STIX Two Text", "Times New Roman", Times, serif; // the medium-weight capitals
 
 $ink-dark: #111111;
 $ink: #444444;
@@ -64,6 +65,15 @@ $hairline: #e4e4e4;
   src: url("static/fonts/spectral-latin-700-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
+  font-display: swap;
+}
+// STIX Two Text (medium): a Times-style face with a true in-between weight,
+// used for the capitals (site name, group names, page titles, ABYSSATA)
+@font-face {
+  font-family: "STIX Two Text";
+  src: url("static/fonts/stix-two-text-latin-500-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
   font-display: swap;
 }
 
@@ -138,9 +148,9 @@ hr {
 
 .left.sidebar .page-title,
 .left.sidebar .page-title a {
-  font-family: $serif !important;
+  font-family: $caps !important;
   font-style: normal !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.14em !important;
   color: $ink !important;
@@ -311,8 +321,8 @@ hr {
     cursor: pointer;
     color: $heading-grey;
     transition: margin-bottom $fold, color 0.15s ease;
-    font-family: $serif;
-    font-weight: 700;
+    font-family: $caps;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 0.86rem;
     letter-spacing: 0.13em;
@@ -660,19 +670,21 @@ a[role="anchor"] {
   color: $quiet;
 }
 
-// Links in writing, the subtitle, backlinks and footer: bold Times capitals
+// Links in writing, the subtitle, backlinks and footer: medium-weight
+// capitals in STIX Two (a Times-style face), like the site name and headings
 article a.internal:not([role="anchor"]):not(.tag-link),
 article a.external,
 .site-subtitle a,
 .backlinks ul li a,
 footer a {
-  font-weight: bold !important;
+  font-family: $caps !important;
+  font-weight: 500 !important;
   text-transform: uppercase;
   font-size: 0.88em !important;
   letter-spacing: 0.03em;
 }
 
-// …inside paragraphs they stay in Times beside the Spectral text
+// …inside paragraphs they keep the same capitals beside the Spectral text
 body article p a.internal:not([role="anchor"]):not(.tag-link),
 body article p a.external,
 body article li a.internal:not([role="anchor"]):not(.tag-link),
@@ -681,7 +693,7 @@ body article blockquote a.internal:not([role="anchor"]):not(.tag-link),
 body article blockquote a.external,
 body article td a.internal:not([role="anchor"]):not(.tag-link),
 body article td a.external {
-  font-family: $serif !important;
+  font-family: $caps !important;
   font-size: 0.95em !important;
 }
 
@@ -798,11 +810,11 @@ article h6 {
   display: flex !important;
   align-items: center;
   gap: 0.6rem;
-  font-family: $serif !important;
+  font-family: $caps !important;
   font-style: normal !important;
   text-transform: uppercase !important;
   font-size: 1.05rem !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   letter-spacing: 0.16em !important;
   color: $ink !important;
   margin: 0 0 0.25rem 0 !important;
