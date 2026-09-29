@@ -1,5 +1,5 @@
 ---
-title: VIRIDITAS
+title: EPINOIA
 ---
 
 >Under construction, please stay tuned. ♡

@@ -5,7 +5,7 @@ import Sections from "./quartz/components/Sections"
 
 const config = await loadQuartzConfig()
 
-// ── Viriditas: subtitle beneath the site name, and the sections list beneath search ──
+// ── Epinoia: subtitle beneath the site name, and the sections list beneath search ──
 const base = await loadQuartzLayout()
 const subtitle = Subtitle()
 const sections = Sections()
