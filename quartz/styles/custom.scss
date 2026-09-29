@@ -240,7 +240,7 @@ hr {
       font-family: $serif;
       font-weight: bold;
       text-transform: uppercase;
-      font-size: 0.86rem;
+      font-size: 1rem;
       letter-spacing: 0.06em;
     }
 
@@ -312,6 +312,25 @@ hr {
 
     &:hover {
       color: $ink;
+    }
+  }
+
+  // Group names are spread letter by letter so they all share one width
+  // (set in Sections.tsx to the width of the longest name).
+  .group-name {
+    display: flex;
+    justify-content: space-between;
+    flex: none;
+    letter-spacing: 0;
+
+    &.measuring {
+      display: inline-flex;
+      justify-content: flex-start;
+      width: auto !important;
+
+      > span {
+        letter-spacing: 0.18em;
+      }
     }
   }
 
@@ -422,7 +441,7 @@ hr {
     }
 
     .site-subtitle {
-      margin: -1rem 0 0.4rem 0 !important;
+      margin: -1rem 0 1.6rem 0 !important;
       width: 12rem;
     }
 
@@ -437,6 +456,7 @@ hr {
 
     .garden-sections {
       width: 12rem;
+      margin-top: 2.3rem;
     }
   }
 }

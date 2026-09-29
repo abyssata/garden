@@ -74,8 +74,17 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
           const open = group.entries.some(isActive)
           return (
             <li class={classNames("group", open ? "" : "closed")}>
-              <button type="button" class="group-toggle" aria-expanded={open ? "true" : "false"}>
-                <span>{group.title}</span>
+              <button
+                type="button"
+                class="group-toggle"
+                aria-expanded={open ? "true" : "false"}
+                aria-label={group.title}
+              >
+                <span class="group-name" aria-hidden="true">
+                  {[...group.title].map((ch) => (
+                    <span>{ch}</span>
+                  ))}
+                </span>
                 <Chevron size={12} />
               </button>
               <ul>
@@ -104,8 +113,26 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 //    as they move between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
 //    and the other groups fold. Any group can be opened or folded by clicking.
+//  · Group names are spread to the width of the longest one, so they start
+//    and end together and their hairlines match.
 Sections.afterDOMLoaded = `
+function alignGroupNames() {
+  for (const nav of document.querySelectorAll(".garden-sections")) {
+    const names = [...nav.querySelectorAll(".group-name")]
+    names.forEach((n) => n.classList.add("measuring"))
+    const w = Math.max(0, ...names.map((n) => n.getBoundingClientRect().width))
+    names.forEach((n) => n.classList.remove("measuring"))
+    if (w > 0) names.forEach((n) => (n.style.width = w + "px"))
+  }
+}
+if (!window.__gardenAlignBound) {
+  window.__gardenAlignBound = true
+  window.addEventListener("resize", alignGroupNames)
+  if (document.fonts) document.fonts.ready.then(alignGroupNames)
+}
+
 function setupGardenSections() {
+  alignGroupNames()
   const norm = (p) => p.replace(/\\/index(\\.html)?$/, "/").replace(/\\/?$/, "/")
   const here = norm(location.pathname)
   for (const nav of document.querySelectorAll(".garden-sections")) {
