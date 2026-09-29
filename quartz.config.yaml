@@ -8,7 +8,7 @@ configuration:
     provider: goatcounter
     websiteId: abyssata
   locale: en-US
-  baseUrl: viriditas.abyssata.blog
+  baseUrl: wiki.abyssata.blog
   ignorePatterns:
     - private
     - templates
