@@ -2,65 +2,95 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 
-// The front page, listed first under De Profundis.
-const PROLOGUE = "Prologue"
+// ─────────────────────────────────────────────────────────────────────
+// The side-panel navigation: "De Profundis", with folding groups inside.
+//
+// Each group has a title and a list of entries. An entry is either:
+//   { title: "Prologue", home: true }            → the home page
+//   { title: "Psyche", folder: "psyche" }        → a folder in the vault
+//
+// The group holding the page you're on opens; the others stay folded
+// until clicked. To add an entry, add a line to a group below (and for a
+// folder, create it in the vault with an index.md inside).
+// ─────────────────────────────────────────────────────────────────────
 
-// The garden's sections, listed in the left panel beneath search.
-// Each entry: the folder name in the vault, and the title shown on the site.
-// To rename a section, change its title here and in the folder's index.md.
-const SECTIONS: { folder: string; title: string }[] = [
-  { folder: "psyche", title: "Psyche" },
-  { folder: "mysteries", title: "Mysteries" },
-  { folder: "being", title: "Being" },
-  { folder: "gothic", title: "Gothic" },
-  { folder: "form", title: "Form" },
-  { folder: "creation", title: "Creation" },
+type Entry = { title: string; folder?: string; home?: boolean }
+type Group = { title: string; entries: Entry[] }
+
+const HEADING = "De Profundis"
+
+const GROUPS: Group[] = [
+  {
+    title: "Threshold",
+    entries: [{ title: "Prologue", home: true }],
+  },
+  {
+    title: "Interiority",
+    entries: [
+      { title: "Psyche", folder: "psyche" },
+      { title: "Mysteries", folder: "mysteries" },
+      { title: "Being", folder: "being" },
+      { title: "Gothic", folder: "gothic" },
+      { title: "Form", folder: "form" },
+      { title: "Creation", folder: "creation" },
+    ],
+  },
 ]
 
-// Heading for the list; click it to open or close the sections.
-const HEADING = "De Profundis"
+const Chevron = ({ size }: { size: number }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="fold"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+)
 
 function Sections({ fileData, displayClass }: QuartzComponentProps) {
   const current = fileData.slug ?? ""
+  const slug = fileData.slug! as FullSlug
+
+  const isActive = (e: Entry) =>
+    e.home
+      ? current === "index"
+      : current === `${e.folder}/index` || current.startsWith(`${e.folder}/`)
+
   return (
     <nav class={classNames(displayClass, "garden-sections")} aria-label="Sections">
       <button type="button" class="sections-toggle" aria-expanded="true">
         <span>{HEADING}</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="fold"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <Chevron size={24} />
       </button>
       <ul>
-        <li>
-          <a
-            class={current === "index" ? "active" : ""}
-            data-home="true"
-            href={pathToRoot(fileData.slug! as FullSlug)}
-          >
-            {PROLOGUE}
-          </a>
-        </li>
-        {SECTIONS.map(({ folder, title }) => {
-          const active = current === `${folder}/index` || current.startsWith(`${folder}/`)
+        {GROUPS.map((group) => {
+          const open = group.entries.some(isActive)
           return (
-            <li>
-              <a
-                class={active ? "active" : ""}
-                href={resolveRelative(fileData.slug! as FullSlug, `${folder}/` as FullSlug)}
-              >
-                {title}
-              </a>
+            <li class={classNames("group", open ? "" : "closed")}>
+              <button type="button" class="group-toggle" aria-expanded={open ? "true" : "false"}>
+                <span>{group.title}</span>
+                <Chevron size={12} />
+              </button>
+              <ul>
+                {group.entries.map((e) => (
+                  <li>
+                    <a
+                      class={isActive(e) ? "active" : ""}
+                      data-home={e.home ? "true" : undefined}
+                      href={e.home ? pathToRoot(slug) : resolveRelative(slug, `${e.folder}/` as FullSlug)}
+                    >
+                      {e.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </li>
           )
         })}
@@ -69,20 +99,34 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
   )
 }
 
-// Open on arrival; a click folds it away. If a reader closes it, it stays closed
-// as they move between pages during that visit. The current section is marked
-// again after every page change.
+// Behaviour in the browser:
+//  · De Profundis opens on arrival; if a reader closes it, it stays closed
+//    as they move between pages during that visit.
+//  · After every page change, the current entry is marked, its group opens
+//    and the other groups fold. Any group can be opened or folded by clicking.
 Sections.afterDOMLoaded = `
 function setupGardenSections() {
-  const here = location.pathname.replace(/\\/index(\\.html)?$/, "/").replace(/\\/?$/, "/")
+  const norm = (p) => p.replace(/\\/index(\\.html)?$/, "/").replace(/\\/?$/, "/")
+  const here = norm(location.pathname)
   for (const nav of document.querySelectorAll(".garden-sections")) {
     const btn = nav.querySelector(".sections-toggle")
     if (!btn) continue
 
-    for (const a of nav.querySelectorAll("ul a")) {
-      const target = new URL(a.getAttribute("href"), location.href).pathname.replace(/\\/?$/, "/")
+    for (const a of nav.querySelectorAll(".group a")) {
+      const target = norm(new URL(a.getAttribute("href"), location.href).pathname)
       const isHome = a.dataset.home === "true"
       a.classList.toggle("active", isHome ? here === target : here === target || here.startsWith(target))
+    }
+
+    for (const group of nav.querySelectorAll("li.group")) {
+      const toggle = group.querySelector(".group-toggle")
+      const open = !!group.querySelector("a.active")
+      group.classList.toggle("closed", !open)
+      toggle.setAttribute("aria-expanded", open ? "true" : "false")
+      toggle.onclick = () => {
+        const nowClosed = group.classList.toggle("closed")
+        toggle.setAttribute("aria-expanded", nowClosed ? "false" : "true")
+      }
     }
 
     let closed = false
