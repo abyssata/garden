@@ -26,7 +26,7 @@
 $heading-grey: #4c4c4c; // the menu's group names (Threshold, Interiority)
 $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
 $serif: "Times New Roman", Times, serif;
-$gelasio: "Gelasio", Georgia, serif;
+$spectral: "Spectral", Georgia, serif;
 
 $ink-dark: #111111;
 $ink: #444444;
@@ -36,32 +36,32 @@ $line: #d0d0d0;
 $hairline: #e4e4e4;
 
 // ── 1. Fonts & colours ──────────────────────────────────────────────
-// Gelasio: a Georgia-style serif stored in the garden (quartz/static/fonts),
+// Spectral: a light, refined book serif stored in the garden (quartz/static/fonts),
 // so the name and reading text look the same on every device.
 @font-face {
-  font-family: "Gelasio";
-  src: url("static/fonts/gelasio-latin-400-normal.woff2") format("woff2");
+  font-family: "Spectral";
+  src: url("static/fonts/spectral-latin-400-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gelasio";
-  src: url("static/fonts/gelasio-latin-400-italic.woff2") format("woff2");
+  font-family: "Spectral";
+  src: url("static/fonts/spectral-latin-400-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gelasio";
-  src: url("static/fonts/gelasio-latin-700-normal.woff2") format("woff2");
+  font-family: "Spectral";
+  src: url("static/fonts/spectral-latin-700-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
-  font-family: "Gelasio";
-  src: url("static/fonts/gelasio-latin-700-italic.woff2") format("woff2");
+  font-family: "Spectral";
+  src: url("static/fonts/spectral-latin-700-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -198,7 +198,7 @@ hr {
   p {
     margin: 0;
     line-height: 1.15;
-    font-family: $gelasio;
+    font-family: $spectral;
     font-style: italic;
     font-size: 0.9rem;
     text-transform: lowercase;
@@ -380,7 +380,7 @@ hr {
   // Underlined on hover; the section you're in steps forward, dark and underlined.
   ul a {
     display: inline-block;
-    font-family: $gelasio !important;
+    font-family: $spectral !important;
     font-style: italic !important;
     font-weight: 400 !important;
     text-transform: lowercase !important;
@@ -600,8 +600,8 @@ hr {
   }
 
   // Ragged right edge on narrow screens (justified text opens large gaps)
-  article p,
-  article blockquote p {
+  body article p,
+  body article blockquote p {
     text-align: left;
     hyphens: manual;
     -webkit-hyphens: manual;
@@ -614,14 +614,14 @@ hr {
   line-height: 1.75;
 }
 
-// Reading text in Gelasio, justified with hyphenation
+// Reading text in Spectral, justified with hyphenation
 article p,
 article li,
 article blockquote,
 article td,
 .popover article p,
 .preview-container p {
-  font-family: $gelasio;
+  font-family: $spectral;
   font-size: 0.86rem;
 }
 
@@ -672,7 +672,7 @@ footer a {
   letter-spacing: 0.03em;
 }
 
-// …inside paragraphs they stay in Times beside the Gelasio text
+// …inside paragraphs they stay in Times beside the Spectral text
 body article p a.internal:not([role="anchor"]):not(.tag-link),
 body article p a.external,
 body article li a.internal:not([role="anchor"]):not(.tag-link),
@@ -780,7 +780,7 @@ h6,
 }
 
 // Page titles and headings in writing, set in the same voices as the menu:
-// spaced capitals with a hairline (like THRESHOLD) and Gelasio italic
+// spaced capitals with a hairline (like THRESHOLD) and Spectral italic
 // (like the site name and the entries). No bold anywhere.
 .article-title,
 article h1,
@@ -820,7 +820,7 @@ body article h1,
 body article h2,
 body article h4,
 body article h6 {
-  font-family: $gelasio !important;
+  font-family: $spectral !important;
   font-style: italic !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
@@ -869,7 +869,7 @@ body article h5 {
 // ── 7. Section pages & listings ─────────────────────────────────────
 // The English gloss beneath a section's Latin title
 article p.gloss {
-  font-family: $gelasio !important;
+  font-family: $spectral !important;
   font-style: italic;
   text-align: left !important;
   color: $quiet;
