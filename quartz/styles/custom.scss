@@ -27,7 +27,7 @@ $heading-grey: #4c4c4c; // the menu's group names (Threshold, Interiority)
 $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
 $serif: "Times New Roman", Times, serif;
 $spectral: "Spectral", Georgia, serif;
-$caps: "STIX Two Text", "Times New Roman", Times, serif; // the medium-weight capitals
+$caps: "STIX Two Text", "Times New Roman", Times, serif; // the semibold capitals
 
 $ink-dark: #111111;
 $ink: #444444;
@@ -67,13 +67,13 @@ $hairline: #e4e4e4;
   font-weight: 700;
   font-display: swap;
 }
-// STIX Two Text (medium): a Times-style face with a true in-between weight,
+// STIX Two Text (semibold): a Times-style face with a true in-between weight,
 // used for the capitals (site name, group names, page titles, ABYSSATA)
 @font-face {
   font-family: "STIX Two Text";
-  src: url("static/fonts/stix-two-text-latin-500-normal.woff2") format("woff2");
+  src: url("static/fonts/stix-two-text-latin-600-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-display: swap;
 }
 
@@ -150,7 +150,7 @@ hr {
 .left.sidebar .page-title a {
   font-family: $caps !important;
   font-style: normal !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.14em !important;
   color: $ink !important;
@@ -322,7 +322,7 @@ hr {
     color: $heading-grey;
     transition: margin-bottom $fold, color 0.15s ease;
     font-family: $caps;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 0.86rem;
     letter-spacing: 0.13em;
@@ -670,7 +670,7 @@ a[role="anchor"] {
   color: $quiet;
 }
 
-// Links in writing, the subtitle, backlinks and footer: medium-weight
+// Links in writing, the subtitle, backlinks and footer: semibold
 // capitals in STIX Two (a Times-style face), like the site name and headings
 article a.internal:not([role="anchor"]):not(.tag-link),
 article a.external,
@@ -678,7 +678,7 @@ article a.external,
 .backlinks ul li a,
 footer a {
   font-family: $caps !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   text-transform: uppercase;
   font-size: 0.88em !important;
   letter-spacing: 0.03em;
@@ -814,7 +814,7 @@ article h6 {
   font-style: normal !important;
   text-transform: uppercase !important;
   font-size: 1.05rem !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   letter-spacing: 0.16em !important;
   color: $ink !important;
   margin: 0 0 0.25rem 0 !important;
