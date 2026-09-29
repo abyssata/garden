@@ -1,6 +1,9 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
-import { FullSlug, resolveRelative } from "../util/path"
+import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
+
+// The front page, listed first under De Profundis.
+const PROLOGUE = "Prologue"
 
 // The garden's sections, listed in the left panel beneath search.
 // Each entry: the folder name in the vault, and the title shown on the site.
@@ -40,6 +43,15 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
         </svg>
       </button>
       <ul>
+        <li>
+          <a
+            class={current === "index" ? "active" : ""}
+            data-home="true"
+            href={pathToRoot(fileData.slug! as FullSlug)}
+          >
+            {PROLOGUE}
+          </a>
+        </li>
         {SECTIONS.map(({ folder, title }) => {
           const active = current === `${folder}/index` || current.startsWith(`${folder}/`)
           return (
@@ -70,7 +82,8 @@ function setupGardenSections() {
 
     for (const a of nav.querySelectorAll("ul a")) {
       const target = new URL(a.getAttribute("href"), location.href).pathname.replace(/\\/?$/, "/")
-      a.classList.toggle("active", here === target || here.startsWith(target))
+      const isHome = a.dataset.home === "true"
+      a.classList.toggle("active", isHome ? here === target : here === target || here.startsWith(target))
     }
 
     let closed = false
