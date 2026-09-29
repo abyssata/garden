@@ -255,9 +255,11 @@ hr {
     }
 
     .fleuron {
-      height: 1.05rem;
-      width: auto;
+      // a little room around the circle so its edge is never clipped
+      height: 1.18rem;
+      width: 1.18rem;
       display: block;
+      overflow: visible;
       transition: color 0.15s ease;
 
       .dot {

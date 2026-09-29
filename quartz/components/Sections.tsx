@@ -51,7 +51,9 @@ const GROUPS: Group[] = [
 const Fleuron = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 100"
+    viewBox="-6 -6 112 112"
+    width="112"
+    height="112"
     class="fleuron"
     aria-hidden="true"
   >
