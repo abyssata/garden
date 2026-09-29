@@ -128,7 +128,7 @@ hr {
 // ── 3. Left panel ───────────────────────────────────────────────────
 // Name, subtitle, search and the menu share one 12rem column.
 
-// Site name: "EPINOIA" in widely spaced capitals, like THRESHOLD, with a
+// Site name: "EPINOIA" in bold spaced capitals, like THRESHOLD, with a
 // hairline running to the column's edge, in line with the subtitle's end.
 .page-title {
   display: block !important;
@@ -140,9 +140,9 @@ hr {
 .left.sidebar .page-title a {
   font-family: $serif !important;
   font-style: normal !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.2em !important;
+  letter-spacing: 0.14em !important;
   color: $ink !important;
 }
 
@@ -281,7 +281,7 @@ hr {
     line-height: 1.4;
   }
 
-  // Groups inside the menu (Threshold, Interiority): light spaced capitals
+  // Groups inside the menu (Threshold, Interiority): bold spaced capitals
   // that fold; the group holding the current page opens, the others stay folded.
   li.group {
     margin: 0 0 0.55rem 0;
@@ -290,7 +290,7 @@ hr {
     transition: grid-template-rows $fold;
   }
 
-  // Light, widely spaced capitals with a hairline running to the edge
+  // Bold spaced capitals with a hairline running to the edge
   .group-toggle {
     display: flex;
     align-items: center;
@@ -304,10 +304,10 @@ hr {
     color: $heading-grey;
     transition: margin-bottom $fold, color 0.15s ease;
     font-family: $serif;
-    font-weight: 400;
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 0.86rem;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.13em;
 
     &::after {
       content: "";
@@ -343,7 +343,7 @@ hr {
       width: auto !important;
 
       > span {
-        letter-spacing: 0.18em;
+        letter-spacing: 0.13em;
       }
     }
   }
@@ -774,7 +774,7 @@ article h6 {
   line-height: 1.3;
 }
 
-// The page title: widely spaced capitals, a hairline running to the edge
+// The page title: bold spaced capitals, a hairline running to the edge
 .article-title {
   display: flex !important;
   align-items: center;
@@ -783,7 +783,8 @@ article h6 {
   font-style: normal !important;
   text-transform: uppercase !important;
   font-size: 1.05rem !important;
-  letter-spacing: 0.22em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
   color: $ink !important;
   margin: 0 0 0.25rem 0 !important;
 
