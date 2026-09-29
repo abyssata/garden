@@ -658,3 +658,134 @@ body article p:has(> a > img) + h4 a[role="anchor"] {
 body article p:has(> img) {
   margin-bottom: 0 !important;
 }
+
+// ── Sections list in the left panel (De Anima, De Alchymia, …) ──
+.garden-sections {
+  margin: 1.1rem 0 0 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0 0 0.35rem 0;
+    line-height: 1.4;
+  }
+
+  a {
+    font-family: $serif !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.07em;
+    color: #8a8a8a !important;
+    border-bottom: none !important;
+
+    &:hover,
+    &.active {
+      color: #444444 !important;
+    }
+  }
+}
+
+@media #{$desktop}, #{$tablet} {
+  .left.sidebar .garden-sections {
+    width: 12rem;
+  }
+}
+
+// Phones: sections run across in a single wrapped line beneath the subtitle
+@media #{$mobile} {
+  .left.sidebar .garden-sections {
+    order: 4;
+    flex-basis: 100%;
+    margin: 0.4rem 0 0 0;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.9rem;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      font-size: 0.68rem !important;
+    }
+  }
+}
+
+.popover .garden-sections,
+.preview-container .garden-sections {
+  display: none !important;
+}
+
+// The English gloss beneath a section's Latin title
+article p.gloss {
+  font-family: "Gelasio", Georgia, serif !important;
+  font-style: italic;
+  text-align: left !important;
+  color: #8a8a8a;
+  font-size: 0.95rem;
+  margin-top: -0.4rem;
+}
+
+// ── Section (folder) pages ──
+// No date or reading time under a section's title
+body[data-slug$="/index"] .content-meta {
+  display: none !important;
+}
+
+.page-listing {
+  margin-top: 1.5rem;
+
+  // hide "N items under this folder."
+  > p {
+    display: none;
+  }
+
+  ul.section-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li.section-li {
+    margin: 0;
+  }
+
+  .section {
+    display: flex !important;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #efefef !important;
+
+    .meta {
+      margin: 0;
+      min-width: 6.5rem;
+      font-family: $serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      color: #8a8a8a;
+    }
+
+    .desc h3 {
+      margin: 0 !important;
+      font-size: 0.82rem !important;
+      letter-spacing: 0.07em !important;
+
+      a {
+        border-bottom: none !important;
+      }
+    }
+
+    ul.tags {
+      display: none;
+    }
+  }
+}
