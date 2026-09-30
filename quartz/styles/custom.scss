@@ -239,6 +239,24 @@ hr {
   }
 }
 
+// The painting beneath the subtitle: a thin hairline frame with a little
+// white between the frame and the picture
+.frontispiece {
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid $hairline;
+  box-sizing: border-box;
+  line-height: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+    border-radius: 0;
+  }
+}
+
 // Search: a single line beneath an italic "search"
 .search .search-button {
   background: none !important;
@@ -543,16 +561,22 @@ hr {
       width: 12rem;
     }
 
-    // Justified so it spans exactly the width of the name and its line
+    // Justified so it spans exactly the width of the name and its line.
+    // Beneath it, the painting, search and circle sit an equal 1rem apart
+    // (the panel's own 1.2rem gap, drawn in slightly by these margins).
     .site-subtitle {
-      margin: -1.15rem 0 1.6rem 0 !important;
+      margin: -1.15rem 0 -0.25rem 0 !important;
       width: 12rem;
       text-align: justify;
       text-align-last: justify;
     }
 
+    .frontispiece {
+      width: 12rem;
+    }
+
     .search {
-      margin: 0.4rem 0 0.4rem 0 !important;
+      margin: -0.2rem 0 !important;
     }
 
     .search .search-button {
@@ -562,7 +586,7 @@ hr {
 
     .garden-sections {
       width: 12rem;
-      margin-top: 2.3rem;
+      margin-top: 0;
     }
   }
 }
@@ -573,6 +597,7 @@ hr {
   .page-title,
   .search,
   .site-subtitle,
+  .frontispiece,
   .garden-sections {
     display: none !important;
   }
@@ -608,6 +633,18 @@ hr {
   .left.sidebar .site-subtitle {
     order: 3;
     flex-basis: 100%;
+  }
+
+  // the painting becomes a framed band, cropped to a strip
+  .left.sidebar .frontispiece {
+    order: 3;
+    flex-basis: 100%;
+    margin: 0.35rem 0 0.2rem;
+
+    img {
+      height: 4.5rem;
+      object-fit: cover;
+    }
   }
 
   .left.sidebar .garden-sections {
