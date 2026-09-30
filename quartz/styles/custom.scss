@@ -173,8 +173,17 @@ hr {
   border-bottom: none !important;
 }
 
+// A comma after the name, so it reads on into the subtitle:
+// "TEMENOS, a digital garden by ABYSSATA."
+.left.sidebar .page-title a::before {
+  content: ",";
+  order: 1;
+  letter-spacing: 0;
+}
+
 .left.sidebar .page-title a::after {
   content: "";
+  order: 2;
   flex: 1 1 auto;
   min-width: 1.2em;
   border-top: 1px solid #d6d6d6;
