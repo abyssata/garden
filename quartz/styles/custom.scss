@@ -240,13 +240,17 @@ hr {
 }
 
 // The painting beneath the subtitle: a thin hairline frame with a little
-// white between the frame and the picture
+// white between the frame and the picture, and a small caption beneath:
+// the artist in oxblood semibold capitals, the year in grey italic
 .frontispiece {
   margin: 0;
-  padding: 0.4rem;
-  border: 1px solid $hairline;
   box-sizing: border-box;
-  line-height: 0;
+
+  .frame {
+    padding: 0.4rem;
+    border: 1px solid $hairline;
+    line-height: 0;
+  }
 
   img {
     display: block;
@@ -254,6 +258,26 @@ hr {
     height: auto;
     margin: 0 !important;
     border-radius: 0;
+  }
+
+  figcaption {
+    margin: 0.4rem 0 0 0;
+    text-align: center;
+    line-height: 1.3;
+    font-family: $caps;
+    font-weight: 600;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $accent;
+
+    i {
+      font-family: $spectral;
+      font-weight: 400;
+      font-size: 1.2em;
+      letter-spacing: 0.02em;
+      color: $quiet;
+    }
   }
 }
 
