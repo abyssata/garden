@@ -3,8 +3,8 @@ import { classNames } from "../util/lang"
 import { FullSlug, pathToRoot } from "../util/path"
 
 // The site name in the left panel. Same as Quartz's page title, except the
-// first letter is set apart so it can be drawn as a script initial (the T in
-// Pinyon Script). Screen readers and search engines still read the whole name.
+// first letter is set apart so it can be styled on its own (an italic T).
+// Screen readers and search engines still read the whole name.
 function SiteName({ fileData, cfg, displayClass }: QuartzComponentProps) {
   const title = cfg?.pageTitle ?? "Temenos"
   const baseDir = pathToRoot(fileData.slug! as FullSlug)
