@@ -143,11 +143,12 @@ body {
   display: none !important;
 }
 
-// Date and reading time, snug beneath a note's title
+// Date and reading time, in small spaced capitals snug beneath a note's title
 .content-meta {
-  font-size: 0.8125rem;
+  font-size: 0.68rem;
   line-height: 1.4 !important;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: $quiet !important;
   margin-top: 0 !important;
 }
@@ -592,7 +593,7 @@ hr {
     // panel's own 1.2rem gap, drawn in slightly by these margins), with a
     // little more room before the circle.
     .site-subtitle {
-      margin: -1.15rem 0 -0.25rem 0 !important;
+      margin: -1.35rem 0 -0.25rem 0 !important;
       width: 12rem;
       text-align: justify;
       text-align-last: justify;
@@ -755,6 +756,12 @@ article blockquote p {
   hyphens: auto;
   -webkit-hyphens: auto;
   hyphenate-limit-chars: 7 3 3;
+}
+
+// Bold in writing: oxblood, like the links
+article strong,
+article b {
+  color: $accent;
 }
 
 // Links: oxblood with a faint line beneath that deepens on hover
