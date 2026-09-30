@@ -434,13 +434,14 @@ hr {
     }
   }
 
-  // The sections themselves: lowercase italic, each after a pale em dash.
+  // The sections themselves: lowercase, upright with an italic first letter,
+  // each after a pale em dash.
   // Always underlined in pale grey; on hover, and for the section you're in,
   // the entry steps forward and the underline turns oxblood.
   ul a {
     display: inline-block;
     font-family: $spectral !important;
-    font-style: italic !important;
+    font-style: normal !important; // upright, with only the first letter in italic (.lead)
     font-weight: 400 !important;
     text-transform: lowercase !important;
     letter-spacing: 0 !important;
@@ -461,6 +462,10 @@ hr {
       color: $accent !important;
       text-decoration-color: $accent-line !important;
       transform: translateX(0.6em);
+    }
+
+    .lead {
+      font-style: italic;
     }
 
     // An entry that isn't linked yet: no underline, no hover, no pointer

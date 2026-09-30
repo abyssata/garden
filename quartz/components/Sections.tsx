@@ -62,6 +62,17 @@ const Fleuron = () => (
   </svg>
 )
 
+// An entry's name, with only its first letter in italic
+const Label = ({ title }: { title: string }) => {
+  const [first, ...rest] = [...title]
+  return (
+    <>
+      <span class="lead">{first}</span>
+      {rest.join("")}
+    </>
+  )
+}
+
 const Chevron = ({ size }: { size: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -124,10 +135,12 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
                           e.home ? pathToRoot(slug) : resolveRelative(slug, `${e.folder}/` as FullSlug)
                         }
                       >
-                        {e.title}
+                        <Label title={e.title} />
                       </a>
                     ) : (
-                      <a class="unlinked">{e.title}</a>
+                      <a class="unlinked">
+                        <Label title={e.title} />
+                      </a>
                     )}
                   </li>
                 ))}
