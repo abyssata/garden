@@ -443,8 +443,10 @@ hr {
       }
     }
 
+    // The page you're on: oxblood and bold (hover only previews, without bold)
     &.active {
       color: $accent !important;
+      font-weight: 700 !important;
       text-decoration-color: $accent-line !important;
     }
 
