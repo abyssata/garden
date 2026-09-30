@@ -9,6 +9,7 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 // Each group has a title and a list of entries. An entry is either:
 //   { title: "Prologue", home: true }            → the home page
 //   { title: "Psyche", folder: "psyche" }        → a folder in the vault
+//   { title: "Scratchpad", href: "https://…" }   → another site
 //   { title: "Daybook" }                         → a name only, not yet linked
 //
 // The group holding the page you're on opens; the others stay folded
@@ -16,7 +17,7 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 // folder, create it in the vault with an index.md inside).
 // ─────────────────────────────────────────────────────────────────────
 
-type Entry = { title: string; folder?: string; home?: boolean }
+type Entry = { title: string; folder?: string; home?: boolean; href?: string }
 type Group = { title: string; entries: Entry[] }
 
 // The menu has no visible heading: a circumpunct (☉) sits between two
@@ -41,8 +42,12 @@ const GROUPS: Group[] = [
   },
   {
     title: "Marginalia",
-    // Not linked yet: add folder: "…" to each once its pages exist
-    entries: [{ title: "Daybook" }, { title: "Scratchpad" }, { title: "To-do" }],
+    // Daybook and To-do aren't linked yet: add folder: "…" once their pages exist
+    entries: [
+      { title: "Daybook" },
+      { title: "Scratchpad", href: "https://misc.abyssata.blog" },
+      { title: "To-do" },
+    ],
   },
 ]
 
@@ -126,7 +131,11 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
               <ul>
                 {group.entries.map((e) => (
                   <li>
-                    {e.home || e.folder ? (
+                    {e.href ? (
+                      <a class="external-entry" data-external="true" href={e.href}>
+                        <Label title={e.title} />
+                      </a>
+                    ) : e.home || e.folder ? (
                       <a
                         class={isActive(e) ? "active" : ""}
                         data-home={e.home ? "true" : undefined}
@@ -185,6 +194,7 @@ function setupGardenSections() {
     if (!btn) continue
 
     for (const a of nav.querySelectorAll(".group a[href]")) {
+      if (a.dataset.external === "true") continue
       const target = norm(new URL(a.getAttribute("href"), location.href).pathname)
       const isHome = a.dataset.home === "true"
       a.classList.toggle("active", isHome ? here === target : here === target || here.startsWith(target))
