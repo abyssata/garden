@@ -83,6 +83,16 @@ $accent-line: rgba(92, 34, 41, 0.3); // the faint line beneath links
   font-weight: 600;
   font-display: swap;
 }
+// Pinyon Script, for the script T that begins the site name. Only that one
+// letter is stored, so the file is tiny.
+@font-face {
+  font-family: "Pinyon Script";
+  src: url("static/fonts/pinyon-script-T.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0054;
+}
 
 :root {
   --darkgray: #{$body-ink} !important;
@@ -171,6 +181,20 @@ hr {
   display: inline-flex !important;
   align-items: center;
   border-bottom: none !important;
+}
+
+// The name's first letter: a script T, slightly thickened (the font has only
+// one weight) and given a little room before the capitals
+.left.sidebar .page-title .initial {
+  font-family: "Pinyon Script", $caps !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  font-size: 1.45em;
+  line-height: 0;
+  letter-spacing: 0 !important;
+  margin-right: 0.22em;
+  -webkit-text-stroke: 0.02em currentColor;
+  paint-order: stroke fill;
 }
 
 // A comma after the name, so it reads on into the subtitle:
