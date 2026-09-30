@@ -3,7 +3,8 @@ import { classNames } from "../util/lang"
 import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 
 // ─────────────────────────────────────────────────────────────────────
-// The side-panel navigation: "In Abyssum", with folding groups inside.
+// The side-panel menu: a circumpunct (☉) that folds the whole list, and
+// folding groups inside it.
 //
 // Each group has a title and a list of entries. An entry is either:
 //   { title: "Prologue", home: true }            → the home page
@@ -95,11 +96,9 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
   const slug = fileData.slug! as FullSlug
 
   const isActive = (e: Entry) =>
-    !e.home && !e.folder
-      ? false
-      : e.home
+    e.home
       ? current === "index"
-      : current === `${e.folder}/index` || current.startsWith(`${e.folder}/`)
+      : !!e.folder && (current === `${e.folder}/index` || current.startsWith(`${e.folder}/`))
 
   return (
     <nav class={classNames(displayClass, "garden-sections")} aria-label="Sections">
@@ -154,8 +153,9 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 }
 
 // Behaviour in the browser:
-//  · The menu opens on arrival (clicking the circle folds it; the centre point shows only while folded); if a reader closes it, it stays closed
-//    as they move between pages during that visit.
+//  · The menu opens on arrival. Clicking the circle folds it (the centre
+//    point shows only while folded); once folded, it stays folded as the
+//    reader moves between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
 //    and the other groups fold. Any group can be opened or folded by clicking.
 //  · Group names are spread to the width of the longest one, so they start

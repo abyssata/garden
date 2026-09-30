@@ -1,51 +1,45 @@
 @use "./variables.scss" as *;
 
 // ════════════════════════════════════════════════════════════════════
-//  VIRIDITAS · the garden's stylesheet
+//  TEMENOS · the garden's stylesheet
 //
 //  Contents
-//   1. Fonts & colours
-//   2. Page & reading column
+//   1. Fonts & page
+//   2. Reading column
 //   3. Left panel: name, subtitle, search, the menu (☉)
 //   4. Phones
 //   5. Writing: paragraphs, links, quotations, code, images, captions
 //   6. Headings
 //   7. Section pages & listings
 //   8. Backlinks, search results, previews, footer
-//
-//  Colours used throughout
-//   #111111  darkest: hover and the current section
-//   #444444  headings, links, the site name
-//   #4a4a4a  body text
-//   #4c4c4c  group names in the menu (Threshold, Interiority)
-//   #767676  quiet text: subtitle, dates, captions, glosses, menu links
-//   #d0d0d0  faint lines under links
-//   #e4e4e4  hairlines and borders
-//   #5c2229  oxblood: the name, group names, page titles, links, current page
 // ════════════════════════════════════════════════════════════════════
 
-$heading-grey: #4c4c4c; // the menu's group names (Threshold, Interiority)
-$fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
-$serif: "Times New Roman", Times, serif;
-$spectral: "Spectral", Georgia, serif;
-$caps: "STIX Two Text", "Times New Roman", Times, serif; // the semibold capitals
+// Typefaces
+$serif: "Times New Roman", Times, serif; // headings H3/H5, small print
+$spectral: "Spectral", Georgia, serif; // reading text, menu entries, italics
+$caps: "STIX Two Text", "Times New Roman", Times, serif; // name, group names, page titles, links
 
-$ink-dark: #111111;
-$ink: #444444;
-$body-ink: #4a4a4a;
-$quiet: #767676;
-$line: #d0d0d0;
-$hairline: #e4e4e4;
+// Greys, darkest to palest
+$ink-dark: #111111; // selected text
+$ink: #444444; // H1/H2, search results
+$body-ink: #4a4a4a; // body text
+$heading-grey: #4c4c4c; // H3
+$quiet: #767676; // subtitle, dates, glosses, menu entries, H5
+$line: #d0d0d0; // the line under search
+$hairline: #e4e4e4; // hairlines, borders, menu underlines and dashes
 
 // The one colour: oxblood, like dried ink. Used for the name, the group
 // names, page titles, links, the page you're on, and the circle.
 $accent: #5c2229;
-$accent-dark: #43161b;             // on hover
+$accent-dark: #43161b; // on hover
 $accent-line: rgba(92, 34, 41, 0.3); // the faint line beneath links
 
-// ── 1. Fonts & colours ──────────────────────────────────────────────
-// Spectral: a light, refined book serif stored in the garden (quartz/static/fonts),
-// so the name and reading text look the same on every device.
+$fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
+
+// ── 1. Fonts & page ─────────────────────────────────────────────────
+// All fonts are stored in the garden (quartz/static/fonts), so the site
+// looks the same on every device.
+// Spectral: a light, refined book serif for reading text and the menu
 @font-face {
   font-family: "Spectral";
   src: url("static/fonts/spectral-latin-400-normal.woff2") format("woff2");
@@ -74,8 +68,8 @@ $accent-line: rgba(92, 34, 41, 0.3); // the faint line beneath links
   font-weight: 700;
   font-display: swap;
 }
-// STIX Two Text (semibold): a Times-style face with a true in-between weight,
-// used for the capitals (site name, group names, page titles, ABYSSATA)
+// STIX Two Text: a Times-style face with true in-between weights.
+// Semibold, for the group names and links (ABYSSATA)
 @font-face {
   font-family: "STIX Two Text";
   src: url("static/fonts/stix-two-text-latin-600-normal.woff2") format("woff2");
@@ -83,15 +77,15 @@ $accent-line: rgba(92, 34, 41, 0.3); // the faint line beneath links
   font-weight: 600;
   font-display: swap;
 }
-// …its semibold italic, for page titles
+// …medium italic, for page titles
 @font-face {
   font-family: "STIX Two Text";
-  src: url("static/fonts/stix-two-text-latin-600-italic.woff2") format("woff2");
+  src: url("static/fonts/stix-two-text-latin-500-italic.woff2") format("woff2");
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   font-display: swap;
 }
-// …and its medium weight, for the site name only
+// …and medium, for the site name
 @font-face {
   font-family: "STIX Two Text";
   src: url("static/fonts/stix-two-text-latin-500-normal.woff2") format("woff2");
@@ -132,12 +126,8 @@ body {
   background: #efefef;
   color: $ink-dark;
 }
-::-moz-selection {
-  background: #efefef;
-  color: $ink-dark;
-}
 
-// ── 2. Page & reading column ────────────────────────────────────────
+// ── 2. Reading column ───────────────────────────────────────────────
 #quartz-body .center {
   min-width: 0 !important;
   max-width: 660px !important;
@@ -153,9 +143,10 @@ body {
   display: none !important;
 }
 
-// Date and reading time under a note's title
+// Date and reading time, snug beneath a note's title
 .content-meta {
   font-size: 0.8125rem;
+  line-height: 1.4 !important;
   letter-spacing: 0.03em;
   color: $quiet !important;
   margin-top: 0 !important;
@@ -171,7 +162,7 @@ hr {
 // ── 3. Left panel ───────────────────────────────────────────────────
 // Name, subtitle, search and the menu share one 12rem column.
 
-// Site name: "TEMENOS" in bold spaced capitals, like THRESHOLD, with a
+// Site name: "TEMENOS," in medium spaced capitals after a script T, with a
 // hairline running to the column's edge, in line with the subtitle's end.
 .page-title {
   display: block !important;
@@ -239,7 +230,6 @@ hr {
   margin: 0;
 
   a {
-    color: $accent !important;
     font-size: 0.8rem;
     letter-spacing: 0.04em;
 
@@ -355,8 +345,9 @@ hr {
     line-height: 1.4;
   }
 
-  // Groups inside the menu (Threshold, Interiority): bold spaced capitals
-  // that fold; the group holding the current page opens, the others stay folded.
+  // Groups inside the menu (Threshold, Interiority, Marginalia): semibold
+  // spaced capitals that fold; the group holding the current page opens,
+  // the others stay folded.
   li.group {
     margin: 0 0 0.55rem 0;
     display: grid;
@@ -364,7 +355,7 @@ hr {
     transition: grid-template-rows $fold;
   }
 
-  // Bold spaced capitals with a hairline running to the edge
+  // …with a hairline running to the edge
   .group-toggle {
     display: flex;
     align-items: center;
@@ -442,10 +433,9 @@ hr {
     }
   }
 
-  // The sections themselves: lowercase, upright with an italic first letter,
-  // each after a pale em dash.
-  // Always underlined in pale grey; on hover, and for the section you're in,
-  // the entry steps forward and the underline turns oxblood.
+  // The entries: lowercase, upright with an italic first letter, each after
+  // a pale em dash and underlined in pale grey. On hover, and for the page
+  // you're on, the entry steps forward and turns oxblood.
   ul a {
     display: inline-block;
     font-family: $spectral !important;
@@ -464,8 +454,6 @@ hr {
     text-underline-offset: 3px;
     transition: color 0.15s ease, text-decoration-color 0.15s ease, transform 0.2s ease;
 
-    // Hovering an entry previews the "you are here" look: it steps
-    // forward, turns oxblood and gains its faint underline
     &:hover {
       color: $accent !important;
       text-decoration-color: $accent-line !important;
@@ -488,31 +476,23 @@ hr {
       }
     }
 
-    // The page you're on: oxblood and bold (hover only previews, without bold)
+    // The page you're on: oxblood, bold, stepped forward
     &.active {
       color: $accent !important;
       font-weight: 700 !important;
       text-decoration-color: $accent-line !important;
+      transform: translateX(0.6em);
     }
 
-    // A pale em dash before every section, in the grey of the lines…
+    // A pale em dash before every entry, in the grey of the lines
     &::before {
       content: "\2014";
       display: inline-block;
       margin-left: -0.6em;
       margin-right: 0.8em;
       font-style: normal;
-      color: $hairline; // the same grey as the menu's lines
-      text-decoration: none;
-    }
-
-    // …and the one you're in steps forward (its dash stays grey)
-    &.active {
-      transform: translateX(0.6em);
-    }
-
-    &.active::before {
       color: $hairline;
+      text-decoration: none;
     }
   }
 
@@ -861,9 +841,8 @@ h6,
   color: $ink-dark;
 }
 
-// Page titles and headings in writing, set in the same voices as the menu:
-// spaced capitals with a hairline (like THRESHOLD) and Spectral italic
-// (like the site name and the entries). No bold anywhere.
+// Headings in writing, set in the same voices as the menu: Spectral italic
+// (like the entries) and spaced capitals (like the group names), unbolded
 .article-title,
 article h1,
 article h2,
@@ -875,7 +854,7 @@ article h6 {
   line-height: 1.3;
 }
 
-// The page title: semibold italic lowercase, a hairline running to the edge
+// The page title: medium italic lowercase, a hairline running to the edge
 .article-title {
   display: flex !important;
   align-items: center;
@@ -884,10 +863,10 @@ article h6 {
   font-style: italic !important;
   text-transform: lowercase !important;
   font-size: 1.35rem !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   letter-spacing: 0.01em !important;
   color: $accent !important;
-  margin: 0 0 0.25rem 0 !important;
+  margin: 0 !important;
 
   &::after {
     content: "";
@@ -896,7 +875,7 @@ article h6 {
   }
 }
 
-// Italic headings: H1, H2 and H4 (an H4 directly beneath an image stays a
+// Italic headings: H1, H2, H4 and H6 (an H4 directly beneath an image is a
 // caption; see the Images section above)
 body article h1,
 body article h2,
@@ -956,7 +935,7 @@ article p.gloss {
   text-align: left !important;
   color: $quiet;
   font-size: 0.95rem;
-  margin-top: -0.4rem;
+  margin-top: -0.15rem;
 }
 
 // No date or reading time under a section's title
