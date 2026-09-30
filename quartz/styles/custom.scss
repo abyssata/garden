@@ -68,7 +68,7 @@ $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
   font-display: swap;
 }
 // STIX Two Text: a Times-style face with true in-between weights.
-// Semibold, for page titles, group names and links (ABYSSATA)
+// Semibold, for the site name, page titles, group names and links (ABYSSATA)
 @font-face {
   font-family: "STIX Two Text";
   src: url("static/fonts/stix-two-text-latin-600-normal.woff2") format("woff2");
@@ -76,19 +76,11 @@ $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
   font-weight: 600;
   font-display: swap;
 }
-// …medium italic, for heading 4
+// …and medium italic, for heading 4
 @font-face {
   font-family: "STIX Two Text";
   src: url("static/fonts/stix-two-text-latin-500-italic.woff2") format("woff2");
   font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-}
-// …and medium, for the site name
-@font-face {
-  font-family: "STIX Two Text";
-  src: url("static/fonts/stix-two-text-latin-500-normal.woff2") format("woff2");
-  font-style: normal;
   font-weight: 500;
   font-display: swap;
 }
@@ -164,7 +156,7 @@ hr {
 .left.sidebar .page-title a {
   font-family: $caps !important;
   font-style: normal !important;
-  font-weight: 500 !important; // medium: a touch lighter, to sit with the script T
+  font-weight: 600 !important; // semibold, like the page titles
   text-transform: uppercase !important;
   letter-spacing: 0.155em !important; // keeps the letters where the semibold had them
   color: $accent !important;
@@ -589,7 +581,7 @@ hr {
 
     .garden-sections {
       width: 12rem;
-      margin-top: 0.6rem;
+      margin-top: 1.1rem;
     }
   }
 }
