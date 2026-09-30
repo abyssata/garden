@@ -403,7 +403,8 @@ hr {
   }
 
   // The sections themselves: lowercase italic, each after a pale em dash.
-  // Underlined on hover; the section you're in steps forward, dark and underlined.
+  // Always underlined in pale grey; on hover, and for the section you're in,
+  // the entry steps forward and the underline turns oxblood.
   ul a {
     display: inline-block;
     font-family: $spectral !important;
@@ -417,23 +418,28 @@ hr {
     border-bottom: none !important;
     padding-bottom: 0 !important;
     text-decoration: underline !important;
-    text-decoration-color: transparent !important;
+    text-decoration-color: $hairline !important;
     text-decoration-thickness: 1px !important;
     text-underline-offset: 3px;
-    transition: text-decoration-color 0.15s ease, transform 0.2s ease;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease, transform 0.2s ease;
 
+    // Hovering an entry previews the "you are here" look: it steps
+    // forward, turns oxblood and gains its faint underline
     &:hover {
-      color: $ink !important;
-      text-decoration-color: $line !important;
+      color: $accent !important;
+      text-decoration-color: $accent-line !important;
+      transform: translateX(0.6em);
     }
 
-    // An entry that isn't linked yet: same look, no hover, no pointer
+    // An entry that isn't linked yet: no underline, no hover, no pointer
     &.unlinked {
       cursor: default;
+      text-decoration-color: transparent !important;
 
       &:hover {
         color: $quiet !important;
         text-decoration-color: transparent !important;
+        transform: none;
       }
     }
 
@@ -442,24 +448,24 @@ hr {
       text-decoration-color: $accent-line !important;
     }
 
-    // A pale em dash before every section…
+    // A pale em dash before every section, in the grey of the lines…
     &::before {
       content: "\2014";
       display: inline-block;
       margin-left: -0.6em;
       margin-right: 0.8em;
       font-style: normal;
-      color: #b5b5b5;
+      color: $hairline; // the same grey as the menu's lines
       text-decoration: none;
     }
 
-    // …and the one you're in steps forward, its dash dark
+    // …and the one you're in steps forward (its dash stays grey)
     &.active {
       transform: translateX(0.6em);
     }
 
     &.active::before {
-      color: $accent;
+      color: $hairline;
     }
   }
 
@@ -614,7 +620,8 @@ hr {
     }
 
     // no stepping forward in the wrapped row
-    ul a.active {
+    ul a.active,
+    ul a:hover {
       transform: none;
     }
 
