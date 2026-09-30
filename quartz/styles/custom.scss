@@ -76,7 +76,7 @@ $fold: 0.4s cubic-bezier(0.4, 0, 0.2, 1); // opening and folding in the menu
   font-weight: 600;
   font-display: swap;
 }
-// …medium italic, for heading 4 and the T of the site name
+// …medium italic, for heading 4
 @font-face {
   font-family: "STIX Two Text";
   src: url("static/fonts/stix-two-text-latin-500-italic.woff2") format("woff2");
@@ -152,7 +152,7 @@ hr {
 // ── 3. Left panel ───────────────────────────────────────────────────
 // Name, subtitle, search and the menu share one 12rem column.
 
-// Site name: "TEMENOS," in medium spaced capitals after an italic T, with a
+// Site name: "TEMENOS," in medium spaced capitals, with a
 // hairline running to the column's edge, in line with the subtitle's end.
 .page-title {
   display: block !important;
@@ -178,14 +178,6 @@ hr {
   display: inline-flex !important;
   align-items: center;
   border-bottom: none !important;
-}
-
-// The name's first letter: the same capital, leaning in italic, with a
-// little room so it doesn't crowd the E
-.left.sidebar .page-title .initial {
-  font-style: italic !important;
-  letter-spacing: 0 !important;
-  margin-right: 0.2em;
 }
 
 // A comma after the name, so it reads on into the subtitle:
@@ -561,7 +553,7 @@ hr {
     }
 
     .page-title {
-      font-size: 1.35rem !important;
+      font-size: 1.2rem !important;
       line-height: 1 !important;
       white-space: nowrap;
       margin-bottom: 0.55rem !important;
