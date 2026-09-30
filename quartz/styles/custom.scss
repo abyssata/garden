@@ -370,7 +370,7 @@ hr {
     margin: 0 0 0.55rem 0;
     display: grid;
     grid-template-rows: auto 1fr;
-    transition: grid-template-rows $fold;
+    transition: grid-template-rows $fold, margin-bottom $fold;
   }
 
   // …with a hairline running to the edge
@@ -435,8 +435,10 @@ hr {
     padding-left: 1rem;
   }
 
+  // folded groups sit a little further apart
   li.group.closed {
     grid-template-rows: auto 0fr;
+    margin-bottom: 0.85rem;
 
     .group-toggle {
       margin-bottom: 0;
