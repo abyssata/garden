@@ -588,11 +588,11 @@ hr {
     }
 
     // Justified so it spans exactly the width of the name and its line.
-    // Beneath it, the painting and search sit an equal 1rem apart (the
-    // panel's own 1.2rem gap, drawn in slightly by these margins), with a
-    // little more room before the circle.
+    // Beneath it, the painting (1.2rem down), then the search (1rem, drawn
+    // in slightly from the panel's own 1.2rem gap), then a little more room
+    // before the circle.
     .site-subtitle {
-      margin: -1.35rem 0 -0.25rem 0 !important;
+      margin: -1.35rem 0 0 0 !important;
       width: 12rem;
       text-align: justify;
       text-align-last: justify;
