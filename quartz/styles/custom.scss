@@ -488,10 +488,9 @@ hr {
       }
     }
 
-    // The page you're on: oxblood, bold, stepped forward
+    // The page you're on: oxblood, stepped forward
     &.active {
       color: $accent !important;
-      font-weight: 700 !important;
       text-decoration-color: $accent-line !important;
       transform: translateX(0.6em);
     }
