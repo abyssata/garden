@@ -9,7 +9,7 @@ import { FullSlug, pathToRoot, resolveRelative } from "../util/path"
 // Each group has a title and a list of entries. An entry is either:
 //   { title: "Prologue", home: true }            → the home page
 //   { title: "Psyche", folder: "psyche" }        → a folder in the vault
-//   { title: "Scratchpad", href: "https://…" }   → another site
+//   { title: "Notepad", href: "https://…" }      → another site
 //   { title: "Daybook" }                         → a name only, not yet linked
 //
 // The group holding the page you're on opens; the others stay folded
@@ -45,7 +45,7 @@ const GROUPS: Group[] = [
     // Daybook and To-do aren't linked yet: add folder: "…" once their pages exist
     entries: [
       { title: "Daybook" },
-      { title: "Scratchpad", href: "https://misc.abyssata.blog" },
+      { title: "Notepad", href: "https://misc.abyssata.blog" },
       { title: "To-do" },
     ],
   },
