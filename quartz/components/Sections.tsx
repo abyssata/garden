@@ -31,7 +31,7 @@ const GROUPS: Group[] = [
     // folder: "…" once its page exists. Inquiries is its own site.
     entries: [
       { title: "Prologue", home: true },
-      { title: "Self-portrait", href: "https://wiki.abyssata.blog" },
+      { title: "Self-portrait", href: "https://garden.abyssata.blog" },
       { title: "Inquiries", href: "https://ask.abyssata.blog" },
     ],
   },

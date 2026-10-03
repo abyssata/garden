@@ -8,7 +8,7 @@ configuration:
     provider: goatcounter
     websiteId: abyssata
   locale: en-US
-  baseUrl: wiki.abyssata.blog
+  baseUrl: garden.abyssata.blog
   ignorePatterns:
     - private
     - templates
