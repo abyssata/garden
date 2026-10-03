@@ -27,12 +27,11 @@ const HEADING = "In Abyssum"
 const GROUPS: Group[] = [
   {
     title: "Threshold",
-    // Self-portrait, Underway and Inquiries point at the home page for now:
+    // Self-portrait and Inquiries point at the home page for now:
     // swap each href for folder: "…" once its page exists
     entries: [
       { title: "Prologue", home: true },
       { title: "Self-portrait", href: "https://wiki.abyssata.blog" },
-      { title: "Underway", href: "https://wiki.abyssata.blog" },
       { title: "Inquiries", href: "https://wiki.abyssata.blog" },
     ],
   },
