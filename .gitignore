@@ -12,3 +12,6 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+
+# mockups and other files the Claude app saves here
+Claude outputs/

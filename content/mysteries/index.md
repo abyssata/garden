@@ -1,5 +1,5 @@
 ---
-title: Mysteries
+title: MYSTERIES
 description: On the sacred, ritual and hidden things.
 ---
 <p class="gloss">on the sacred, ritual and hidden things</p>

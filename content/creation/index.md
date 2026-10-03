@@ -1,5 +1,5 @@
 ---
-title: Creation
+title: CREATION
 description: On making, art and the origin of things.
 ---
 <p class="gloss">on making, art and the origin of things</p>

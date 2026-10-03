@@ -1,5 +1,5 @@
 ---
-title: Gothic
+title: GOTHIC
 description: On ruins, darkness and the sacred-strange.
 ---
 <p class="gloss">on ruins, darkness and the sacred-strange</p>

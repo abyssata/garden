@@ -1,5 +1,5 @@
 ---
-title: Psyche
+title: PSYCHE
 description: On the soul, dreams and the alchemical imagination.
 ---
 <p class="gloss">on the soul, dreams and the alchemical imagination</p>

@@ -1,5 +1,5 @@
 ---
-title: Form
+title: FORM
 description: On beauty, shape and adornment.
 ---
 <p class="gloss">on beauty, shape and adornment</p>

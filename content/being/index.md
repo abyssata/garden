@@ -1,5 +1,5 @@
 ---
-title: Being
+title: BEING
 description: On existence and what it is to be.
 ---
 <p class="gloss">on existence and what it is to be</p>
