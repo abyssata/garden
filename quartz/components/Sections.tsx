@@ -217,8 +217,13 @@ function setupGardenSections() {
       }
     }
 
-    let closed = false
-    try { closed = sessionStorage.getItem("garden-sections-closed") === "1" } catch (e) {}
+    // On phones the menu starts folded; elsewhere it starts open. Either way,
+    // once a reader opens or folds it, that choice holds for the visit.
+    let closed = window.matchMedia("(max-width: 800px)").matches
+    try {
+      const kept = sessionStorage.getItem("garden-sections-closed")
+      if (kept !== null) closed = kept === "1"
+    } catch (e) {}
     nav.classList.toggle("collapsed", closed)
     btn.setAttribute("aria-expanded", closed ? "false" : "true")
 

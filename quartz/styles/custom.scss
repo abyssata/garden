@@ -598,7 +598,9 @@ hr {
 }
 
 // ── 4. Phones ───────────────────────────────────────────────────────
-// Name and search side by side; subtitle and sections on their own lines.
+// The name across the full width; beneath it the subtitle with the search
+// beside it; then the circle, with the menu folded until it's tapped.
+// The painting is left to larger screens.
 @media #{$mobile} {
   #quartz-body .left.sidebar {
     display: flex !important;
@@ -614,35 +616,39 @@ hr {
   .left.sidebar .page-title {
     margin: 0 !important;
     white-space: nowrap;
+    flex: 1 1 100% !important;
+  }
+
+  .left.sidebar .page-title a {
+    width: 100%;
+  }
+
+  // Quartz's empty mobile spacer would push the subtitle off the left edge
+  #quartz-body .left.sidebar .mobile-only {
+    display: none !important;
   }
 
   .left.sidebar .page-title a::after {
     min-width: 2.2em;
   }
 
-  .left.sidebar .search {
-    flex: 0 1 9rem !important;
-  }
-
   .left.sidebar .site-subtitle {
     order: 3;
-    flex-basis: 100%;
+    flex: 1 1 0 !important;
+    margin: 0 !important;
   }
 
-  // the painting becomes a framed band, cropped to a strip
-  .left.sidebar .frontispiece {
-    order: 3;
-    flex-basis: 100%;
-    margin: 0.35rem 0 0.2rem;
+  .left.sidebar .search {
+    order: 4;
+    flex: 0 0 7.5rem !important;
+  }
 
-    img {
-      height: 4.5rem;
-      object-fit: cover;
-    }
+  .left.sidebar .frontispiece {
+    display: none !important;
   }
 
   .left.sidebar .garden-sections {
-    order: 4;
+    order: 5;
     flex-basis: 100%;
     margin: 0.4rem 0 0 0;
 
