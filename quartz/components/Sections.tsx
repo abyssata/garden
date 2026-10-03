@@ -48,9 +48,9 @@ const GROUPS: Group[] = [
   },
   {
     title: "Marginalia",
-    // Daybook and To-do aren't linked yet: add folder: "…" once their pages exist
+    // To-do isn't linked yet: add folder: "…" once its page exists
     entries: [
-      { title: "Daybook" },
+      { title: "Diary", href: "https://diary.abyssata.blog" },
       { title: "Notepad", href: "https://misc.abyssata.blog" },
       { title: "To-do" },
     ],
