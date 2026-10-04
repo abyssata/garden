@@ -153,10 +153,16 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       goatcounterScript.setAttribute('data-goatcounter', endpoint);
       goatcounterScript.onload = () => {
         window.goatcounter.endpoint = endpoint;
-        goatcounter.count({ path: location.pathname });
-        document.addEventListener('nav', () => {
-          goatcounter.count({ path: location.pathname });
-        });
+        // Count each page once: the first page fires both the load and a
+        // 'nav' event, so remember the last page counted
+        let lastCounted = null;
+        const countPage = () => {
+          if (location.pathname === lastCounted) return;
+          lastCounted = location.pathname;
+          goatcounter.count({ path: location.host + location.pathname });
+        };
+        countPage();
+        document.addEventListener('nav', countPage);
       };
 
       document.head.appendChild(goatcounterScript);

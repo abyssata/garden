@@ -6,7 +6,11 @@ configuration:
   enablePopovers: true
   analytics:
     provider: goatcounter
-    websiteId: abyssata
+    # counts go through lantern, a Cloudflare forwarder (see ~/Documents/counter),
+    # to abyssata.goatcounter.com, so ad blockers don't drop them
+    websiteId: lantern
+    host: inabyssata.workers.dev
+    scriptSrc: /static/lantern.js
   locale: en-US
   baseUrl: garden.abyssata.blog
   ignorePatterns:
