@@ -1046,16 +1046,23 @@ body[data-slug$="/index"] .content-meta {
       color: $quiet;
     }
 
-    // each note's title, in the page title's semibold capitals
+    // each note's title, a link like ABYSSATA: semibold capitals with the
+    // faint oxblood line beneath, deepening on hover
     .desc h3 {
       margin: 0 !important;
       font-family: $caps !important;
       font-weight: 600 !important;
       font-size: 0.74rem !important;
-      letter-spacing: 0.12em !important;
+      letter-spacing: 0.03em !important;
 
       a {
-        border-bottom: none !important;
+        font-weight: 600 !important;
+        border-bottom: 1px solid $accent-line !important;
+        padding-bottom: 1px !important;
+
+        &:hover {
+          border-bottom-color: $accent !important;
+        }
       }
     }
 
@@ -1107,8 +1114,39 @@ body[data-slug$="/index"] .content-meta {
   }
 }
 
-.popover h1 {
-  color: $ink !important;
+// Hover previews: a quiet square card with a hairline border and a soft
+// shadow; the title in oxblood with its date beneath, the text fading out
+// at the bottom rather than being cut off
+.popover .popover-inner {
+  width: 27rem !important;
+  max-height: 17rem !important;
+  padding: 1.3rem 1.5rem 1.2rem !important;
+  border: 1px solid $hairline !important;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07) !important;
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent);
+  mask-image: linear-gradient(to bottom, #000 72%, transparent);
+
+  .article-title {
+    color: $accent !important;
+    font-size: 0.8rem !important;
+    margin: 0 0 0.15rem 0 !important;
+  }
+
+  .content-meta {
+    display: block !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  article p,
+  article blockquote p {
+    font-size: 0.8rem !important;
+    line-height: 1.7 !important;
+  }
+
+  article blockquote p {
+    text-align: left !important;
+  }
 }
 
 footer {
