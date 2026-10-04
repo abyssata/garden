@@ -758,6 +758,19 @@ a[role="anchor"] {
   border-bottom: none !important;
 }
 
+// Unplanted links: words that point to a note not yet written. They keep
+// the capitals of a link but fade to a pale oxblood with no line beneath,
+// and can't be clicked or previewed, so they read as promises rather than
+// dead ends. When the note is written, the link comes alive by itself.
+// (Quartz marks these .broken; see disableBrokenWikilinks in quartz.config.yaml.)
+a.internal.broken,
+body article a.internal.broken:not([role="anchor"]):not(.tag-link) {
+  color: rgba(92, 34, 41, 0.42) !important;
+  border-bottom: none !important;
+  pointer-events: none;
+  cursor: default;
+}
+
 .tag-link::before {
   content: "#";
   color: $quiet;

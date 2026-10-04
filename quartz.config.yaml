@@ -92,6 +92,7 @@ plugins:
     enabled: true
     options:
       markdownLinkResolution: shortest
+      disableBrokenWikilinks: true # marks links to unwritten notes as .broken (styled as unplanted in custom.scss)
     order: 60
   - source: "@quartz-community/description"
     enabled: true
