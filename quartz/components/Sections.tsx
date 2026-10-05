@@ -44,6 +44,7 @@ const GROUPS: Group[] = [
       { title: "Gothic", folder: "gothic" },
       { title: "Form", folder: "form" },
       { title: "Creation", folder: "creation" },
+      { title: "Media", folder: "media" },
     ],
   },
   {
