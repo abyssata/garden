@@ -1,5 +1,5 @@
 ---
-title: PROLOGUE,
+title: PROLOGUE
 ---
 >**temenos** ⠀·⠀ τέμενος⠀  _noun ⠀·⠀ Ancient Greek_  
 > A sacred precinct; a space set apart from ordinary use and dedicated to a deity. From τέμνω (_temnō_), “to cut.” 
