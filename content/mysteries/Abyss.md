@@ -19,24 +19,24 @@ description: What has no floor in God, and none in the one who loves.
 status: seedling
 ---
 
-**Abyss** (*abyssus*, from the Greek *a-byssos*, "without bottom"; Middle High German *abgrunt*, Middle Dutch *afgront*, Old French *abysme*). In Classical Greek, the underworld. For the medieval mystics, a word for what has no floor in God and, more startlingly, in the soul. [[Bernard McGinn]] traces this "abyss mysticism" <span class="pg">p. 437</span> across four centuries, from the mid-twelfth to the mid-sixteenth.
+**Abyss** (*abyssus*, from the Greek *a-byssos*, "without bottom"; Middle High German *abgrunt*, Middle Dutch *afgront*, Old French *abysme*). In Classical Greek, the underworld. For the medieval mystics, a word for what has no floor in God and, more startlingly, in the soul. [[Bernard McGinn]] traces this *"abyss mysticism"* <span class="pg">p. 437</span> across four centuries, from the mid-twelfth to the mid-sixteenth.
 
 ### Core
 
-**The word refuses a bottom, and so it suited the unsayable.** The Vulgate uses *abyssus* fifty-one times <span class="pg">McGinn, p. 434</span>, from the darkness on the face of the deep in Genesis to the God who wears the abyss as a garment. McGinn calls it a verbal "black-hole" <span class="pg">p. 434</span> into which the mystics plunged to be lost in God. It became one of the working tools of [[Apophatic Theology|negative theology]], and in [[Meister Eckhart]]'s German it found its twin: the [[Ground]] (*grunt*), and beneath it the un-ground (*abgrunt*).
+**The word refuses a bottom, and so it suited the unsayable.** The Vulgate uses *abyssus* fifty-one times <span class="pg">McGinn, p. 434</span>, from the darkness on the face of the deep in Genesis to the God who wears the abyss as a garment. McGinn calls it a verbal *"black-hole"* <span class="pg">p. 434</span> into which the mystics plunged to be lost in God. It became one of the working tools of [[Apophatic Theology|negative theology]], and in [[Meister Eckhart]]'s German it found its twin: the [[Ground]] (*grunt*), and beneath it the un-ground (*abgrunt*).
 
-**One verse, read four ways.** Everything turns on Psalm 41:8 in the Vulgate (42:7 in English Bibles): *Abyssus abyssum invocat*, "abyss calls out to abyss" <span class="pg">p. 435</span>. What abyss, to what other, and why?
+**One verse, read four ways.** Everything turns on Psalm 41:8 in the Vulgate (42:7 in English Bibles): *Abyssus abyssum invocat*, *"abyss calls out to abyss"* <span class="pg">p. 435</span>. What abyss, to what other, and why?
 
 | Reader | The abyss that calls | Calls to | The verse becomes |
 |---|---|---|---|
 | Augustine | the preacher's heart | the sinner's heart | a warning |
-| [[Bernard of Clairvaux]] | God, "the abyss of mercy" <span class="pg">p. 435</span> | "the abyss of misery," the human heart <span class="pg">p. 435</span> | a contrast: infinite and finite |
+| [[Bernard of Clairvaux]] | God, *"the abyss of mercy"* <span class="pg">p. 435</span> | *"the abyss of misery,"* the human heart <span class="pg">p. 435</span> | a contrast: infinite and finite |
 | William of St-Thierry | the Spirit's embrace in the soul now | the perfected embrace to come | a promise |
 | [[Johannes Tauler]] | the created abyss, the soul | the Uncreated Abyss | union: *ein einig ein*, a Single One |
 
 **What makes the soul bottomless is love.** Around 1200, in what McGinn calls the New Mysticism, the two abysses were found alike in having no limit, and the source of that limitlessness was [[Minne]], the mad, excessive love that is both God's essence and the soul's yearning. The women came first, and in the vernacular: [[Beatrice of Nazareth]], [[Hadewijch]], [[Angela of Foligno]], [[Marguerite Porete]].
 
-**To be abyssed is to be undone.** In [[The Mirror of Simple Souls]], Reason addresses Lady Love as *O tres doulce abysme*, *O dulcissima Abyssata*: "O most sweet abyssed one" <span class="pg">p. 441</span>. The participle is passive; an abyss is something that happens to her. The soul that follows Love down finds "only an abyssal abyss without bottom" <span class="pg">p. 442</span>, and at the sixth stage "sees neither God nor herself, but God sees himself in her, for her, without her" <span class="pg">p. 442</span>. The name holds the whole movement: a feminine *-ata*, one who has been made into depth.
+**To be abyssed is to be undone.** In [[The Mirror of Simple Souls]], Reason addresses Lady Love as *O tres doulce abysme*, *O dulcissima Abyssata*: *"O most sweet abyssed one"* <span class="pg">p. 441</span>. The participle is passive; an abyss is something that happens to her. The soul that follows Love down finds *"only an abyssal abyss without bottom"* <span class="pg">p. 442</span>, and at the sixth stage *"sees neither God nor herself, but God sees himself in her, for her, without her"* <span class="pg">p. 442</span>. The name holds the whole movement: a feminine *-ata*, one who has been made into depth.
 
 *abyss → calls → abyss → ein einig ein*
 

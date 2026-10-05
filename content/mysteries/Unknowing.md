@@ -8,23 +8,23 @@ description: "The principle of inner experience: being as subject non-knowledge,
 status: seedling
 ---
 
-**Unknowing** (*non-savoir*; "non-knowledge" in Boldt's translation). [[Georges Bataille]]'s name, in *[[Inner Experience]]* (1943), for the principle of inner experience and the place it ends: experience "attains in the end the fusion of object and subject, being as subject non-knowledge, as object the unknown" <span class="pg">p. 9</span>. It is not unspeakable. It can be spoken of without betrayal, but it takes from the mind the answers it still had.
+**Unknowing** (*non-savoir*; "non-knowledge" in Boldt's translation). [[Georges Bataille]]'s name, in *[[Inner Experience]]* (1943), for the principle of inner experience and the place it ends: experience *"attains in the end the fusion of object and subject, being as subject non-knowledge, as object the unknown"* <span class="pg">p. 9</span>. It is not unspeakable. It can be spoken of without betrayal, but it takes from the mind the answers it still had.
 
 ### Core
 
-**Non-knowledge as principle.** Inner experience has no destination given in advance. Bataille wants it led wherever it goes, and makes non-knowledge its only rule. Knowledge works in the mode of the project: it plans, defers, makes existence wait on some later result. Unknowing drops the project. It does not arrive at a truth. It "leads to no harbor (but to a place of bewilderment, of nonsense)" <span class="pg">p. 3</span>, and that is where it was meant to go.
+**Non-knowledge as principle.** Inner experience has no destination given in advance. Bataille wants it led wherever it goes, and makes non-knowledge its only rule. Knowledge works in the mode of the project: it plans, defers, makes existence wait on some later result. Unknowing drops the project. It does not arrive at a truth. It *"leads to no harbor (but to a place of bewilderment, of nonsense)"* <span class="pg">p. 3</span>, and that is where it was meant to go.
 
-**Contestation.** Experience puts everything into question, without rest, and does not spare itself. With no church or dogma behind it, it is its own authority, but, as he worked out with [[Maurice Blanchot]], that authority must be contested in turn, so that nothing settles into doctrine, not even unknowing. "NON-KNOWLEDGE LAYS BARE" <span class="pg">p. 52</span>, and whatever it lays bare it strips again, because to see is already to know, and the knowing must be undone.
+**Contestation.** Experience puts everything into question, without rest, and does not spare itself. With no church or dogma behind it, it is its own authority, but, as he worked out with [[Maurice Blanchot]], that authority must be contested in turn, so that nothing settles into doctrine, not even unknowing. *"NON-KNOWLEDGE LAYS BARE"* <span class="pg">p. 52</span>, and whatever it lays bare it strips again, because to see is already to know, and the knowing must be undone.
 
-**Anguish, then ecstasy.** Unknowing arrives first as anguish: the self that wanted to be everything through knowledge finds that it knows nothing. "In anguish, there appears a nudity which puts one into ecstasy" <span class="pg">p. 52</span>. Ecstasy cannot be kept as a possession; it lasts only as long as the anguish does.
+**Anguish, then ecstasy.** Unknowing arrives first as anguish: the self that wanted to be everything through knowledge finds that it knows nothing. *"In anguish, there appears a nudity which puts one into ecstasy"* <span class="pg">p. 52</span>. Ecstasy cannot be kept as a possession; it lasts only as long as the anguish does.
 
-**Communication.** Stripped of what it knows, the self (Bataille's *ipse*) loses its isolation. "I give myself to non-knowledge (this is communication)" <span class="pg">p. 51</span>: the edges between beings give way, in laughter, eroticism, sacrifice, poetry. The aim was never insight, only this loss of separateness.
+**Communication.** Stripped of what it knows, the self (Bataille's *ipse*) loses its isolation. *"I give myself to non-knowledge (this is communication)"* <span class="pg">p. 51</span>: the edges between beings give way, in laughter, eroticism, sacrifice, poetry. The aim was never insight, only this loss of separateness.
 
 *project → contestation → anguish → nudity → ecstasy → communication*
 
 ### Readings
 
-**With the mystics.** Bataille read [[Angela of Foligno]] and [[Pseudo-Dionysius]] closely, and kept their ecstasy and anguish while letting their God fall through. Angela died calling God an "Unknown Nothingness" <span class="pg">McGinn, p. 433</span> (see [[Abyss]]); Bataille, recalling his own night, writes: "At other times, my ignorance was the abyss over which I was suspended" <span class="pg">p. 58</span>.
+**With the mystics.** Bataille read [[Angela of Foligno]] and [[Pseudo-Dionysius]] closely, and kept their ecstasy and anguish while letting their God fall through. Angela died calling God an *"Unknown Nothingness"* <span class="pg">McGinn, p. 433</span> (see [[Abyss]]); Bataille, recalling his own night, writes: *"At other times, my ignorance was the abyss over which I was suspended"* <span class="pg">p. 58</span>.
 
 **Sartre.** [[Jean-Paul Sartre]]'s 1943 review, "A New Mystic," named the kinship and objected to it, faulting the book for sliding between testimony and philosophy.
 
@@ -45,7 +45,7 @@ status: seedling
 
 ### Notes
 - Unknowing: pushing human inner experience toward an intimate encounter with the unknown.
-- Bataille's dead end and Hadewijch's "deep new abyss": both are places where movement stops and something else begins. → [[Abyss]]
+- Bataille's dead end and Hadewijch's *"deep new abyss"*: both are places where movement stops and something else begins. → [[Abyss]]
 - Anguish first, then ecstasy: the order of the [[Nigredo]] before the white, but with no promise that the second stage comes.
 - Contestation is a discipline, not a mood. Unknowing has to be practised, the way the mystics practised their ascent.
 - Does the abyss still call when no other abyss answers?

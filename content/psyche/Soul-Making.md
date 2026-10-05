@@ -12,7 +12,7 @@ status: seedling
 
 ### Core
 
-**Soul is an angle of regard, not a possession.** Hillman calls it "a perspective rather than a substance," which means it can be cultivated but never owned. Nothing happens to the soul; things happen, and soul is the turn by which they come to mean.
+**Soul is an angle of regard, not a possession.** Hillman calls it *"a perspective rather than a substance,"* which means it can be cultivated but never owned. Nothing happens to the soul; things happen, and soul is the turn by which they come to mean.
 
 **In the studio, the metaphor goes literal.** The hand works the matter and the matter works back. *Poiēsis* in the Greek sense is any passage from absence into presence, and the maker is carried across with the thing she makes. Art is soul-making with the evidence left on the table.
 

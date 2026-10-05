@@ -8,17 +8,17 @@ description: The art of an age that stopped believing and kept the instinct.
 status: seedling
 ---
 
-**The Weird** (from Old English *wyrd*, fate). In [[Joyce Carol Oates]]'s reading of [[H. P. Lovecraft]], weird fiction is the gothic of an age "that has ceased to believe collectively in the supernatural while retaining the primitive instinct to do so." Its subject is "man's relations to the cosmos—to the unknown."
+**The Weird** (from Old English *wyrd*, fate). In [[Joyce Carol Oates]]'s reading of [[H. P. Lovecraft]], weird fiction is the gothic of an age *"that has ceased to believe collectively in the supernatural while retaining the primitive instinct to do so."* Its subject is *"man's relations to the cosmos—to the unknown."*
 
 ### Core
 
-**Nothing means nothing.** The American gothic begins in the Puritan imagination, where even weather and insects were read for signs, under a God loving and tyrannical at once. Lovecraft keeps the dread and empties the heavens. The cosmos is still dense with significance; none of it is meant for us. "Is there nothing in the gothic imagination that can mean simply—'nothing?'"
+**Nothing means nothing.** The American gothic begins in the Puritan imagination, where even weather and insects were read for signs, under a God loving and tyrannical at once. Lovecraft keeps the dread and empties the heavens. The cosmos is still dense with significance; none of it is meant for us. *"Is there nothing in the gothic imagination that can mean simply—'nothing?'"*
 
-**Gothic in temperament.** His science looks only backward, "directed obsessively into the distant past," which is where the gothic has always looked. The castle becomes a New England farmhouse or a decaying seaport, a place that seems real and then turns quietly wrong, until the place itself produces the horror.
+**Gothic in temperament.** His science looks only backward, *"directed obsessively into the distant past,"* which is where the gothic has always looked. The castle becomes a New England farmhouse or a decaying seaport, a place that seems real and then turns quietly wrong, until the place itself produces the horror.
 
-**The dream that happens to you.** The tales read "like pitilessly transcribed dreams." The narrator does not act; he witnesses, while the strangeness flows past him, touches him, or swallows him whole. Nothing is chosen; everything arrives. What Lovecraft called cosmic, Oates calls "psychic autobiography": the night-gaunts of a child's bed grown to the size of the universe.
+**The dream that happens to you.** The tales read *"like pitilessly transcribed dreams."* The narrator does not act; he witnesses, while the strangeness flows past him, touches him, or swallows him whole. Nothing is chosen; everything arrives. What Lovecraft called cosmic, Oates calls *"psychic autobiography"*: the night-gaunts of a child's bed grown to the size of the universe.
 
-**Time, blood and madness.** Each tale is a wager against time, and every scholar who tries to step outside it loses. He goes looking for what is ancient and finds it in his own veins. Dread turns to welcome, and the monstrous is embraced "like literal kin." "And perhaps time can only be 'defeated' by madness."
+**Time, blood and madness.** Each tale is a wager against time, and every scholar who tries to step outside it loses. He goes looking for what is ancient and finds it in his own veins. Dread turns to welcome, and the monstrous is embraced *"like literal kin."* *"And perhaps time can only be 'defeated' by madness."*
 
 ### Voices
 > Though in many of its aspects this visible world seems formed in love, the invisible spheres were formed in fright.
@@ -42,7 +42,7 @@ status: seedling
 > — Master Willem, *Bloodborne*
 
 ### Notes
-- The Innsmouth narrator ends rejoicing as he goes "down through the black abysses" to dwell "amidst wonder and glory forever": mystical union turned inside out. → [[Abyss]]
+- The Innsmouth narrator ends rejoicing as he goes *"down through the black abysses"* to dwell *"amidst wonder and glory forever"*: mystical union turned inside out. → [[Abyss]]
 - *Wyrd*, fate. Predestination never left the gothic; it moved into the blood.
 - Is cosmic horror the [[Sublime|sublime]] with the consolation taken away?
 
