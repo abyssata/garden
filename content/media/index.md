@@ -1,7 +1,7 @@
 ---
 title: MEDIA
-description: On television, games and the screen.
+description: On moving images, imagined worlds, and the fictions we inhabit.
 ---
-<p class="gloss">on television, games and the screen.</p>
+<p class="gloss">on moving images, imagined worlds, and the fictions we inhabit.</p>
 
 %% A few lines introducing this section can go here — or leave it empty and let the notes speak. Anything between these percent signs stays hidden on the site. %%
