@@ -173,7 +173,8 @@ function Sections({ fileData, displayClass }: QuartzComponentProps) {
 //    point shows only while folded); once folded, it stays folded as the
 //    reader moves between pages during that visit.
 //  · After every page change, the current entry is marked, its group opens
-//    and the other groups fold. Any group can be opened or folded by clicking.
+//    and the other groups fold. Any group can be opened or folded by clicking,
+//    and opening one folds the others, so only one group is open at a time.
 //  · Group names are spread to the width of the longest one, so they start
 //    and end together and their hairlines match.
 Sections.afterDOMLoaded = `
@@ -215,6 +216,14 @@ function setupGardenSections() {
       toggle.onclick = () => {
         const nowClosed = group.classList.toggle("closed")
         toggle.setAttribute("aria-expanded", nowClosed ? "false" : "true")
+        // Opening one group folds the others, so only one is open at a time
+        if (!nowClosed) {
+          for (const other of nav.querySelectorAll("li.group")) {
+            if (other === group) continue
+            other.classList.add("closed")
+            other.querySelector(".group-toggle")?.setAttribute("aria-expanded", "false")
+          }
+        }
       }
     }
 
