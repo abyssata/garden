@@ -56,3 +56,5 @@ Closed, the two make a circuit, and the circuit does not rest:
 ---
 
 **Grows into** · [[Pothos]] · [[The Soul's Code]] · [[Magnum Opus]] · [[Active Imagination]]
+
+**Also planted in** · [[Creation|creation]]
