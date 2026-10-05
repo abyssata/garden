@@ -765,7 +765,7 @@ a[role="anchor"] {
 // (Quartz marks these .broken; see disableBrokenWikilinks in quartz.config.yaml.)
 a.internal.broken,
 body article a.internal.broken:not([role="anchor"]):not(.tag-link) {
-  color: rgba(92, 34, 41, 0.42) !important;
+  color: rgba(92, 34, 41, 0.65) !important;
   border-bottom: none !important;
   pointer-events: none;
   cursor: default;
