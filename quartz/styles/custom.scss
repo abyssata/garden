@@ -813,6 +813,51 @@ blockquote {
   opacity: 0.85;
 }
 
+// Tables: a header row in small spaced oxblood capitals, like the
+// headings, and rows divided by hairlines. No heavy rules, no fill.
+article .table-container {
+  margin: 1.2rem 0;
+}
+
+article .table-container > table,
+article table {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-collapse: collapse;
+}
+
+article th {
+  font-family: $caps;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $accent;
+  text-align: left;
+  padding: 0.3rem 1rem 0.4rem 0 !important;
+  border-bottom: 1px solid $hairline !important;
+}
+
+article td {
+  min-width: 0 !important;
+  line-height: 1.6;
+  vertical-align: top;
+  padding: 0.45rem 1rem 0.45rem 0 !important;
+}
+
+article tr {
+  border-bottom: 1px solid $hairline !important;
+
+  &:last-child {
+    border-bottom: none !important;
+  }
+}
+
+article thead tr {
+  border-bottom: none !important;
+}
+
 // Code
 pre,
 code {
