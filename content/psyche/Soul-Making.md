@@ -31,15 +31,19 @@ Closed, the two make a circuit, and the circuit does not rest:
 
 ### Voices
 > Call the world if you Please "The vale of Soul-making." Then you will find out the use of the world.
+>
 > — [[John Keats]], letter of 21 April 1819
 
 > The creative process, so far as we are able to follow it at all, consists in the unconscious activation of an archetypal image, and in elaborating and shaping this image into the finished work.
+>
 > — Carl Jung, "On the Relation of Analytical Psychology to Poetry"
 
 > Tell me what you yearn for and I shall tell you who you are. We are what we reach for, the idealized image that drives our wandering.
+>
 > — Hillman, *A Blue Fire*
 
 > This heightened calling longs to be realized - it is in fact made of longing - for the time, inspiration, opportunities, skills, clarity, and especially the courage to answer this vital call.
+>
 > — [[Mary Antonia Wood]], *[[The Archetypal Artist]]*
 
 ### Open

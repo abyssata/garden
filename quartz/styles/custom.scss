@@ -803,14 +803,45 @@ body article td a.external {
   font-size: 0.95em !important;
 }
 
-// Quotations: a thin rule, italic
-blockquote {
-  border-left: 1px solid $hairline !important;
+// Quotations: a faint oxblood rule, italic at full strength. The
+// attribution goes on its own line after a blank ">" line, and steps
+// down into small spaced capitals:
+//   > The quotation.
+//   >
+//   > — Author, *Work*
+blockquote:not(.callout) {
+  border-left: 2px solid $accent-line !important;
   background: none !important;
-  margin-left: 0 !important;
-  padding: 2px 0 2px 1rem !important;
+  margin: 1.6rem 0 !important;
+  padding: 0.15rem 0 0.15rem 1.1rem !important;
   font-style: italic;
-  opacity: 0.85;
+  color: $body-ink;
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 0.7rem;
+  }
+
+  // The attribution: the last paragraph of a quotation that has more than one
+  p:last-child:not(:first-child) {
+    margin-top: 0.45rem;
+    font-family: $caps;
+    font-weight: 600;
+    font-size: 0.6rem;
+    font-style: normal;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: left;
+    color: $quiet;
+  }
+
+  body article & p:last-child:not(:first-child) a.internal:not([role="anchor"]):not(.tag-link) {
+    font-size: 1em !important;
+    letter-spacing: inherit;
+  }
 }
 
 // Tables: a header row in small spaced oxblood capitals, like the
