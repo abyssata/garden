@@ -49,7 +49,7 @@ Closed, the two make a circuit, and the circuit does not rest:
 ### Open
 - Does the finished work keep any of the soul it made, or is it a husk the soul walks out of?
 - Is more soul made in the abandoned piece than the completed one? What does failure work on that success cannot reach?
-- Is craft a discipline of soul-making, or a defence against it — technique as a way of not being touched by the material?
+- Is craft a discipline of soul-making, or a defence against it—technique as a way of not being touched by the material?
 - Jung says the work lets *us* find our way back to the deep springs. Is soul made in the one who receives the art, and is that the same making?
 - If longing is the material, does finishing a work spend it, or feed it?
 
