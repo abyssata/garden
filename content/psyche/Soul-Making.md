@@ -36,7 +36,7 @@ Closed, the two make a circuit, and the circuit does not rest:
 
 > The creative process, so far as we are able to follow it at all, consists in the unconscious activation of an archetypal image, and in elaborating and shaping this image into the finished work.
 >
-> — Carl Jung, "On the Relation of Analytical Psychology to Poetry"
+> — Carl Jung, "On the Relation of Analytical Psychology to Poetry" (*Collected Works*, vol. 15, ¶130)
 
 > Tell me what you yearn for and I shall tell you who you are. We are what we reach for, the idealized image that drives our wandering.
 >

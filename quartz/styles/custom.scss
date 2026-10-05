@@ -845,6 +845,20 @@ blockquote:not(.callout) {
   }
 }
 
+// Page references after a quotation, in tiny spaced oxblood capitals
+// like the headings. Written as <span class="pg">p. 52</span>.
+article span.pg {
+  font-family: $caps;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+  white-space: nowrap;
+  margin-left: 0.2em;
+}
+
 // Tables: a header row in small spaced oxblood capitals, like the
 // headings, and rows divided by hairlines. No heavy rules, no fill.
 article .table-container {
