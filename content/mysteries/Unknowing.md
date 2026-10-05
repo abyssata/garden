@@ -24,8 +24,6 @@ status: seedling
 
 ### Readings
 
-**My note.** Unknowing: pushing human inner experience toward an intimate encounter with the unknown.
-
 **With the mystics.** Bataille read [[Angela of Foligno]] and [[Pseudo-Dionysius]] closely, and kept their ecstasy and anguish while letting their God fall through. Angela died calling God an "Unknown Nothingness" <span class="pg">McGinn, p. 433</span> (see [[Abyss]]); Bataille, recalling his own night, writes: "At other times, my ignorance was the abyss over which I was suspended" <span class="pg">p. 58</span>.
 
 **Sartre.** [[Jean-Paul Sartre]]'s 1943 review, "A New Mystic," named the kinship and objected to it, faulting the book for sliding between testimony and philosophy.
@@ -45,12 +43,12 @@ status: seedling
 >
 > — Bataille, *Inner Experience*, pp. 123–24
 
-### Open
-- Is unknowing something one reaches, or something one stops refusing?
-- Bataille keeps the mystics' ecstasy and drops their God. Does the abyss still call when no other abyss answers?
-- Angela's "Unknown Nothingness" and Bataille's unknown: the same night, or a night with no one in it?
-- Can unknowing be written at all, or does every sentence carry it back into knowledge?
-- Laughter, eros, sacrifice, poetry: which of these do I actually know as a way of coming undone?
+### Notes
+- Unknowing: pushing human inner experience toward an intimate encounter with the unknown.
+- Bataille's dead end and Hadewijch's "deep new abyss": both are places where movement stops and something else begins. → [[Abyss]]
+- Anguish first, then ecstasy: the order of the [[Nigredo]] before the white, but with no promise that the second stage comes.
+- Contestation is a discipline, not a mood. Unknowing has to be practised, the way the mystics practised their ascent.
+- Does the abyss still call when no other abyss answers?
 
 ---
 

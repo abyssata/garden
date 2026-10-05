@@ -43,30 +43,30 @@ status: seedling
 ### Voices
 > The soul is a bottomlessness in which God suffices to himself; and his own self-sufficiency ever finds fruition to the full in this soul, as the soul, for its part, ever does in him.
 >
-> — [[Hadewijch]], Letter 18 (in McGinn, p. 440)
+> — [[Hadewijch]], Letter 18
 
-> My soul melts away/In the madness of Love;/The abyss into which she hurls me/is deeper than the sea;/For love's deep new abyss/renews my wound.
+> My soul melts away / In the madness of Love; / The abyss into which she hurls me/is deeper than the sea; / For love's deep new abyss/renews my wound.
 >
-> — Hadewijch, Song 7 (in McGinn, p. 440)
+> — Hadewijch, Song 7
 
 > The abyss that is the created [thing] draws the Uncreated Abyss into itself, and the two abysses become a Single One (ein einig ein), a pure divine being, so that the spirit is lost in God's Spirit. It is drowned in the bottomless sea.
 >
-> — Johannes Tauler, Sermon 41 (in McGinn, p. 444)
+> — Johannes Tauler, Sermon 41
 
 > O endless Abyss, come to my aid or I am lost!
 >
-> — [[Henry Suso]], *The Life of the Servant*, ch. 38 (in McGinn, p. 446)
+> — [[Henry Suso]], *The Life of the Servant*, ch. 38
 
-> O mighty jaw/ without any mouth,/ Conduct us into your abyss/ and make us know your love,/ For though we be wounded mortally/ When grasped by love we are sound.
+> O mighty jaw / without any mouth, / Conduct us into your abyss / and make us know your love, / For though we be wounded mortally/ When grasped by love we are sound.
 >
-> — [[Jan van Ruusbroec]], *Seven Enclosures* (in McGinn, p. 448)
+> — [[Jan van Ruusbroec]], *Seven Enclosures* 
 
-### Open
+### Notes
+- *Abyssata*: the one made into depth. The name of the blog, and of the ground this garden grows from.
+- In Hadewijch the wound and the abyss are one image seen twice: love hurls her in, and the abyss renews the wound. → [[Wound]]
+- Two abysses calling to each other; two currents running between image and soul ([[Soul-Making]]). The garden keeps finding the same double shape.
+- Porete vanishes so that God may see; Bataille undoes the self so that beings may touch. → [[Unknowing]], [[Annihilation]]
 - Is the abyss a place one falls into, or a capacity one is hollowed out to hold?
-- Porete's soul vanishes so that God may see himself where she was. What survives being abyssed, and who writes the book afterward?
-- Depth psychology inherited the abyss as a figure for the unconscious. Did it keep the love that made the medieval abyss bottomless, or only the depth?
-- Tauler plays *grunt*, *abgrunt*, *slunt* (chasm) against one another. Is the un-ground the ground's deepest name, or its undoing?
-- Nietzsche's abyss gazes back. Is that a secular echo of *abyssus abyssum invocat*, the call answered from the other side?
 
 ---
 
