@@ -1,9 +1,20 @@
 ---
-title: Abyss
+title: Abyss Language
 type: concept
 date: 2026-10-05
-tags: [mysteries, mysticism, apophatic, minne]
-aliases: [Abyssus, Abgrund, Afgront, Abyss Mysticism, Abyssus Abyssum Invocat, Double Abyss, Abyssata]
+tags:
+  - mysteries
+  - mysticism
+  - apophatic
+  - minne
+aliases:
+  - Abyssus
+  - Abgrund
+  - Afgront
+  - Abyss Mysticism
+  - Abyssus Abyssum Invocat
+  - Double Abyss
+  - Abyssata
 description: What has no floor in God, and none in the one who loves.
 status: seedling
 ---
