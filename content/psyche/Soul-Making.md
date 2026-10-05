@@ -20,10 +20,10 @@ status: seedling
 
 **The current runs both ways.**
 
-| Current | Movement | Interlocutor |
-|---|---|---|
-| Outward | archetypal image → shaping → the work | [[Carl Jung]], 1922 |
-| Inward | the work → experience → the soul | Hillman |
+| Current | Movement                              | Interlocutor |
+| ------- | ------------------------------------- | ------------ |
+| Outward | archetypal image → shaping → the work | Jung         |
+| Inward  | the work → experience → the soul      | Hillman      |
 
 Closed, the two make a circuit, and the circuit does not rest:
 
